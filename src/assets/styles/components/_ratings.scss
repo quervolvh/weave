@@ -1,0 +1,67 @@
+.ratings {
+
+    display: flex;
+
+    span {
+
+        width: 20px;
+        height: 20px;
+
+        path {
+
+            transition: 0.5s ease;
+
+        }
+
+        &:hover path {
+
+            fill: color(ratingStar);
+
+        }
+
+    }
+
+    svg {
+
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &.rating-5 path {
+
+        fill: color(ratingStar);
+
+    }
+
+    &.rating-4 span:nth-child(1) path,
+    &.rating-4 span:nth-child(2) path,
+    &.rating-4 span:nth-child(3) path,
+    &.rating-4 span:nth-child(4) path {
+
+        fill: color(ratingStar);
+
+    }
+
+    &.rating-3 span:nth-child(1) path,
+    &.rating-3 span:nth-child(2) path,
+    &.rating-3 span:nth-child(3) path {
+
+        fill: color(ratingStar);
+
+    }
+
+    &.rating-2 span:nth-child(1) path,
+    &.rating-2 span:nth-child(2) path {
+
+        fill: color(ratingStar);
+
+    }
+
+    &.rating-1 span:nth-child(1) path {
+
+        fill: color(ratingStar);
+
+    }
+
+}

@@ -1,0 +1,28 @@
+.new-arrivals {
+
+    .component-header {
+
+        @extend %body-width-and-padding;
+        margin-bottom: 40px;
+        padding-bottom: 0;
+
+    }
+
+    &-block {
+
+        @extend %body-width-and-padding;
+        display: flex;
+        margin-top: 0;
+        padding-top: 0;
+        min-width: 100%;
+        overflow-x: scroll;
+
+        .product-item {
+
+            margin-right: 16px;
+
+        }
+
+    }
+
+}

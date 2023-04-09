@@ -1,0 +1,13 @@
+.component-holder {
+  display: flex;
+  flex-direction: column;
+
+  &.no-border {
+    box-shadow: none;
+  }
+
+  &-body {
+    height: 100%;
+  }
+
+}

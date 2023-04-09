@@ -1,0 +1,83 @@
+.discover-store {
+
+    border-radius: 16px;
+    border: 1px solid color(itemBorder);
+    padding: 24px 16px;
+    min-width: 400px;
+    max-width: 400px;
+
+    &-top {
+
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+
+            display: block;
+            margin-bottom: 8px;
+            width: calc(50% - 4px);
+
+            &:nth-child(odd) {
+
+                margin-right: 4px;
+
+            }
+
+            &:nth-child(even) {
+
+                margin-left: 4px;
+
+            }
+
+        }
+
+    }
+
+    &-bottom {
+
+        display: flex;
+        align-items: center;
+        margin-top: 14px;
+
+        img {
+
+            margin-right: 14px;
+            width: 51px;
+            height: 51px;
+
+        }
+
+        &-info {
+
+            flex-grow: 1;
+
+        }
+
+        &-info-count {
+
+            @include font-size(x-small);
+            display: block;
+            margin-left: 4px;
+            color: color(subBlack);
+
+        }
+
+        &-info-ratings {
+
+            display: flex;
+            align-items: center;
+
+        }
+
+        .button {
+
+            @include font-size(small);
+            padding: 8px 24px;
+            width: max-content;
+            height: max-content;
+
+        }
+
+    }
+
+}

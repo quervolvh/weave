@@ -1,0 +1,170 @@
+.landing {
+
+    &-faq {
+
+        @extend %body-width-and-padding;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 60px;
+        padding-top: 112px;
+        width: 100%;
+
+        .component-header {
+
+            width: 100%;
+            max-width: 492px;
+
+            h2 {
+
+                @include font-size(xxx-large);
+                font-weight: 700;
+
+            }
+
+            h4 {
+
+                @include font-size(medium);
+                color: color(subBlack);
+
+            }
+
+        }
+
+        &-body {
+
+            margin-left: 50px;
+            width: 638px;
+
+            .view-formatter-wrapper-box {
+
+                padding: 0;
+
+            }
+
+            .view-formatter-regular-value  {
+
+                margin-top: 16px !important;
+
+            }
+
+            .view-formatter {
+
+                border-radius: 8px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-bottom: 1px solid rgba(233, 233, 233, 1);
+                padding: 24px 33px;
+                max-width: 509px;
+                transition: 0.2s ease;
+
+                p {
+
+                    margin-bottom: 0 !important;
+                    transition: 0.2s ease;
+
+                }
+
+            }
+
+            .view-formatter.collapsible-show {
+
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+                border-bottom: 0 solid rgba(233, 233, 233, 1);
+                background: color(fair-background);
+
+            }
+
+            .view-formatter-title-box p {
+
+                @include font-size(p-large);
+                font-weight: 700;
+
+            }
+
+        }
+
+    }
+
+    &-information {
+
+        @extend %body-width-and-padding;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 150px;
+        padding-right: 0;
+        padding-bottom: 0;
+        max-width: 2200px;
+
+
+        &-holder {
+
+            z-index: 0;
+            position: relative;
+            margin-top: 50px;
+            background: color(light-background);
+
+            &-top,
+            &-bottom {
+                z-index: -1;
+                position: absolute;
+                width: 100%;
+                height: 157px;
+                background: linear-gradient(180deg, #F4FBFB 0%, rgba(220, 243, 243, 0) 100%);
+
+            }
+
+            &-bottom {
+                bottom: 0;
+            }
+
+        }
+
+        &-top-content {
+
+            @extend %body-width-and-padding;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 0;
+
+            p {
+
+                margin-left: 47px;
+                max-width: 400px;
+                color: color(tertiary-text);
+
+            }
+
+        }
+
+
+        .component-header {
+
+            margin-top: -190px;
+            margin-right: 113px;
+            min-width: 350px;
+            max-width: 535px;
+
+            h2 {
+
+                @include font-size(xxxx-large);
+                margin-bottom: 4px;
+                font-weight: 700;
+
+            }
+
+            .button {
+
+                margin-top: 24px;
+                width: max-content;
+
+            }
+
+        }
+
+    }
+
+}

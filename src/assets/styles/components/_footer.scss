@@ -1,0 +1,53 @@
+.footer {
+  color: color(white);
+
+  &-logo p {
+
+    @include font-size(regular);
+    color: color(footer-text);
+
+  }
+
+  &-link {
+    @include font-size(medium);
+    display: block;
+
+  }
+
+  &-icon-set {
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      padding: 0;
+      width: 25px;
+      height: 25px;
+      background: rgba(0, 0, 0, 0.1);
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  p,
+  a {
+    margin-bottom: 17px;
+  }
+
+
+  h1 {
+    @include font-size(large);
+    margin-bottom: 17px;
+    color: color(white);
+  }
+}
