@@ -13,10 +13,14 @@
 
 //3. Layout
 @import 'layout/landingLayout';
+@import 'layout/landingLayoutCategories';
+@import 'layout/landingLayoutTrail';
 @import 'layout/mainLayout';
 
 //4. Common
 @import 'common/banner';
+@import 'common/categories';
+@import 'common/category-item';
 @import 'common/discover';
 @import 'common/discover-store';
 @import 'common/new-arrivals';
@@ -25,9 +29,11 @@
 //5. Components
 @import 'components/blog-item';
 @import 'components/button';
+@import 'components/component-filter';
 @import 'components/component-header';
 @import 'components/component-holder';
 @import 'components/footer';
+@import 'components/form-field/color';
 @import 'components/form-field/custom-checkbox';
 @import 'components/form-field/image';
 @import 'components/form-field/index';
@@ -36,6 +42,7 @@
 @import 'components/form-field/select';
 @import 'components/form-field/switch';
 @import 'components/modal';
+@import 'components/pagination';
 @import 'components/ratings';
 @import 'components/review-item';
 @import 'components/service-item';
@@ -45,6 +52,7 @@
 
 //6. Pages
 @import 'pages/landing/index';
+@import 'pages/store/index';
 
 //7. Transitions
 @import 'transitions/content-loader';
@@ -56,5 +64,6 @@
 
 // 8. Vendors
 @import 'vendors/lite-picker';
+@import 'vendors/react-slider';
 
 // 9. Color Schemes

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentHolder } from "components";
 import { ProductItem } from "common/Product/ProductItem";
 
-export const NewArrivals: React.FC<Props> = ({ }) => {
+export const NewArrivals: React.FC<Props> = ({ title }) => {
 
     return (
 
@@ -12,7 +12,7 @@ export const NewArrivals: React.FC<Props> = ({ }) => {
 
             bodyClass="new-arrivals-block"
 
-            title="New Arrivals"
+            title={ title || "New Arrivals"}
 
             subtitle="Shop newly dropped items"
 
@@ -193,6 +193,8 @@ export const NewArrivals: React.FC<Props> = ({ }) => {
 }
 
 interface Props {
+
+    title?: string
 
 }
 

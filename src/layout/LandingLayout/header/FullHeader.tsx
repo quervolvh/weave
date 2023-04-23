@@ -80,7 +80,6 @@ export const FullHeader: React.FC = ({ }): JSX.Element => {
 
                 </div>
 
-
             </div>
 
         </div>

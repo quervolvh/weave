@@ -6,6 +6,8 @@ import { ReactElement } from 'react';
 import { LabeledCheckbox } from './LabelledCheckBox';
 import { OptionsInput } from './OptionsInput';
 import { Switch } from './Switch';
+import { SliderInput } from './SliderInput';
+import { ColorInput } from './ColorInput';
 
 export const FormField: React.FC<Props> = (props) => {
 
@@ -32,6 +34,12 @@ export const FormField: React.FC<Props> = (props) => {
         case 'switch':
             RenderElement = Switch;
             break;
+        case 'slider':
+            RenderElement = SliderInput;
+            break;
+        case 'color':
+            RenderElement = ColorInput;
+            break;
         default:
             RenderElement = PlainInput;
     }
@@ -43,9 +51,11 @@ export const FormField: React.FC<Props> = (props) => {
 
 interface Props {
     type?: 'pin' | 'image' | 'option' | 'textarea' | 'price-field' | 'checkbox' |
-    'switch' | 'plain' | 'account-number' | 'password' | 'toggle' | 'date' | 'pattern',
+    'switch' | 'plain' | 'account-number' | 'password' | 'toggle' | 'date' | 'pattern' | 
+    'slider' | 'color',
     label?: string,
     onChange?: (e?: any) => void,
+    alwaysVisible?: boolean,
     value?: string | [] | {} | undefined | null | boolean | number,
     placeHolder?: string | React.FC | React.ReactElement,
     withExtraLabelComponent?: React.FC | React.ReactElement,

@@ -8,6 +8,8 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  font-family: 'satoshi', sans-serif;
+  font-weight: 500;
 }
 
 html {
@@ -31,6 +33,7 @@ h1 {
 
 h2 {
   @include font-size(large);
+  font-family: $header-font;
 }
 
 * {

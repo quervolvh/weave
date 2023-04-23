@@ -15,6 +15,9 @@ $colors: (
   secondary-text: rgba(146, 145, 142, 1),
   fair-background: rgba(255, 249, 242, 1),
   light-background: rgba(244, 251, 251, 1),
+  header-border: rgba(239, 239, 238, 1),
+  inactive-text: #E4E4E3,
+  
   
   tertiary-text:  rgba(117, 116, 113, 1),
   green: #65E4A3,
@@ -23,7 +26,7 @@ $colors: (
   footer: #030200,
   footer-icon-bg: #303135,
   footer-text: rgba(146, 145, 142, 1),
-  dark: rgba(0, 0, 0, 1),
+  dark: rgba(35, 35, 34, 1),
   black_: rgba(0,0,0,1),
   input-border:  #C4C4C4,
   input-bg: #f3f3f3,
@@ -39,9 +42,9 @@ $shadows: (
 
 $header-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
 
-$main-font: 'Open Sans', sans-serif;
-$header-font: 'Manrope', sans-serif;
-$aux-font: 'Manrope', sans-serif;
+$main-font: 'satoshi', sans-serif;
+$header-font: 'cabinet-grotesk', sans-serif;
+$aux-font: 'cabinet-grotesk', sans-serif;
 
 $default-font-size: 14px;
 

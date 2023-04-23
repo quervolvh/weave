@@ -1,0 +1,31 @@
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'satoshi';
+    font-weight: 300;
+    font-style: normal;
+    src: url('./Satoshi-Light.otf');
+}
+
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'satoshi';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./Satoshi-Regular.otf');
+}
+
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'satoshi';
+    font-weight: 500;
+    font-style: normal;
+    src: url('./Satoshi-Medium.otf');
+}
+
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'satoshi';
+    font-weight: 500;
+    font-style: normal;
+    src: url('./Satoshi-Bold.otf');
+}

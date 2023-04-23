@@ -1,0 +1,49 @@
+.store {
+
+    &-top {
+
+        @extend %body-width-and-padding;
+
+        &-controls {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        &-controls-label {
+
+            @include font-size(p-large);
+            font-family: $header-font;
+            font-weight: 700;
+
+        }
+
+    }
+
+    &-top-block {
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .product-item {
+
+            margin-right: 2%;
+            margin-bottom: 48px;
+            width: 23.5%;
+            min-width: 23.5%;
+            max-width: 23.5%;
+
+            &:nth-child(4n) {
+
+                margin-right: 0;
+
+            }
+
+        }
+
+    }
+
+}

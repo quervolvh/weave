@@ -1,0 +1,18 @@
+.category-item {
+
+    img {
+
+        margin-bottom: 16px;
+        border-radius: 100%;
+        width: 96px;
+        height: 96px;
+
+    }
+
+    h2 {
+
+        @include font-size(regular);
+
+    }
+
+}

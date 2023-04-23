@@ -11,3 +11,4 @@ export * from './Header/MobileHeaderToggler';
 export * from './Modal';
 export * from './Pagination';
 export * from './ViewFormatter';
+export * from './ViewFormatter/ViewFormatterIconBox';

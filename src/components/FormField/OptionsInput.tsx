@@ -3,76 +3,75 @@ import { useOnClickOutside } from 'hooks';
 import { FormField } from '.';
 import { ReactElement } from 'react';
 import { classnames } from 'utils';
-import { LinkWrapper } from 'components/LinkWrapper';
-
-export const DisplayOption: React.FC<DisplayOptionProps> = ({
-    click,
-    value,
-    multiSelect,
-    option,
-    field,
-    displayField,
-    toggle,
-    setOutsideEscape
-}) => {
-
-    const Option = option;
-
-    if (typeof option === 'function') return <li onClick={() => setOutsideEscape(false)}> <Option /> </li>;
-
-    return (
-        <LinkWrapper
-            link={option.link}
-            externalLink={option.externalLink}
-        >
-
-            <li
-                onClick={() => { click && click(); toggle() }}
-            >
-
-                {multiSelect &&
-                    <FormField
-                        type="checkbox"
-                        value={(value || []).includes(typeof option === "string" ? option : option[field])}
-                    />
-                }
-
-                <span>
-                    {typeof option === "string" ? option : option?.[displayField || "label"]}
-                </span>
-
-            </li>
-
-        </LinkWrapper>
-    )
-
-}
-
-interface DisplayOptionProps {
-    click(): void,
-    value: string | any[],
-    multiSelect: boolean,
-    option: string | ReactElement | any | { [key: string]: any, link?: string, externalLink?: string, label?: string },
-    field: string,
-    displayField: string,
-    toggle(): void,
-    setOutsideEscape(e: boolean): void
-}
+import { Button } from 'components/Button';
+import { change as setChange } from 'utils';
+import { OptionInputItem } from './OptionInputItem';
+import { generateOptionConsiderations, mapObjectKeysToLabels } from 'utils/Input';
+import { objectOptionType } from 'types/formFieldTypes';
+import { DownArrow } from 'components/Assets';
 
 
 export const OptionsInput: React.FC<OptionsInputProp> = (
-    { label, onChange, value, placeHolder, className, field, onClick = () => null, ...props }
+    {
+
+        label, onChange, value, className, withSubmission, onSubmit,
+
+        field, onClick = () => null, asButton, placeHolder, alwaysVisible,
+        
+        ...props
+
+    }
 ) => {
 
-    const [outsideEscape, setOutsideEscape] = useState(true);
+    const defaultValue = props.defaultValue;
 
-    const [showOptions, setShowOptions] = useState(false);
+    const [state, setState] = useState({
+
+        selection: generateOptionConsiderations(
+            props.multiSelect,
+            props.options as any,
+            field
+        ),
+
+        searchValue: "",
+
+        showOptions: false,
+
+        outsideEscape: true,
+
+        ignoreDefaultValue: false
+
+    });
+
+    const createChange = (
+        val: string | boolean |
+        { [key: string]: string | boolean | number },
+
+        key: "outsideEscape" | "showOptions" | "searchValue" | "selection") => {
+
+        const objValue = typeof val !== "string" && typeof val !== "boolean" && typeof val !== "number";
+
+        if (key === "selection" && objValue) {
+
+            setChange({ ...state.selection, ...val }, "selection", setState);
+
+            onChange && onChange({ ...state.selection, ...val })
+
+            return;
+
+        }
+
+        setChange(val, key, setState);
+
+    }
+
+    const { outsideEscape, showOptions, searchValue } = state;
 
     const ref: React.MutableRefObject<any> = useRef();
 
-    const [searchValue, setSearchValue] = useState("");
-
     const searchProcess = (item: string | any): boolean => {
+
+        const { searchValue } = state;
 
         let itemLabel = item === "string" ? item : item?.[props.displayField || "label" || ""];
 
@@ -82,8 +81,6 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
     }
 
-    useOnClickOutside(ref, () => !outsideEscape ? null : setShowOptions(false));
-
     const change = (val: string | number | any) => {
 
         if (typeof onChange !== "function") return;
@@ -91,20 +88,19 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
         onChange(val);
     };
 
-    const clickOption = (e: string | number | any) => {
+    const clickOption = (e: string | boolean | { [key: string]: string | boolean }) => {
 
         if (props.multiSelect) {
-            e = e[field];
-            const currentVal = Array.isArray(value) ? value : [];
-            if (currentVal.includes(e)) {
-                change(currentVal.filter(item => item !== e));
-            } else change([...currentVal, e]);
-            return;
+
+            createChange(e, "selection");
+
+            if (withSubmission) return;
+
         }
 
         change(e);
 
-        setShowOptions(false);
+        createChange(false, "showOptions");
 
     }
 
@@ -112,14 +108,24 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
         let displayValue = { value: placeHolder || "choose", isDefault: true };
 
+        if (defaultValue !== undefined && !state.ignoreDefaultValue) {
+
+            return placeholderStatus ? false : String(defaultValue) === "null" ? "All" : String(defaultValue);
+
+        }
+
         if (value === undefined || value === null) {
+
             return placeholderStatus ? displayValue.isDefault : displayValue.value;
+
         };
 
         const display = (_val: string | { [key: string]: any }) => {
 
             if (typeof _val === "string") {
+
                 return _val;
+
             }
 
             return _val[props.displayField || "label"];
@@ -127,18 +133,21 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
         if (props.multiSelect) {
 
-            const valueFromArray = () => {
+            const options = props.options as unknown as { [key: string]: { label: string, value: string } };
 
-                if (Array.isArray(value)) {
-                    if (value.length > 0) return { value: display(value[0]), isDefault: false };
-                }
+            const selectedLabels = mapObjectKeysToLabels(options);
 
-                return { value: placeHolder, isDefault: true };
+            let allSelection: string[] = [];
 
-            }
+            Object.entries(state.selection).forEach(([key, value]) =>
 
-            displayValue = valueFromArray();
+                (value === true && selectedLabels[key]) && allSelection.push(selectedLabels[key])
 
+            )
+
+            const selectionAvailability = allSelection.length > 0;
+
+            displayValue = { value: selectionAvailability ? allSelection.join(" & ") : "choose", isDefault: !selectionAvailability };
 
         } else {
 
@@ -147,120 +156,235 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
         }
 
         return placeholderStatus ? displayValue["isDefault"] : displayValue["value"];
-    }
 
-    const AddPlacement = props.addFunction;
+    }
 
     const Output = displayOutput();
 
     const placeHolderStatus = displayOutput(true);
 
+    useOnClickOutside(ref, () => !outsideEscape ? null : createChange(false, "showOptions"));
+
     return (
         <div
+
             className={`form-field ${className}`}
+
+            ref={ref}
+
         >
 
             {label && !props.isContextMenu &&
                 <p
+
                     className="form-field-title context-menu-title"
+
                     tabIndex={props.isContextMenu ? 0 : 1}>
+
                     {label}
+
                 </p>
             }
 
             <div
-                className={`select ${(props.isContextMenu) ? 'withContextMenu' : ''}`}
-                ref={ref}
+                className={classnames(
+
+                    !asButton && 'select',
+                    
+                    alwaysVisible && 'select-always-visible',
+
+                    props.isContextMenu && 'withContextMenu',
+
+                    props.selectorBoxClass
+
+                )}
+
+                tabIndex={0}
+
+                role={"button"}
+
             >
 
-                <div
-                    className="select-box"
-                    onClick={() => (onClick(), setShowOptions(prevState => !prevState), setOutsideEscape(true))}
-                    tabIndex={0}
-                    onKeyDown={(e) => props.onKeyDown && props.onKeyDown(e)}
-                >
+                {
+                    asButton &&
 
-                    {
-                        !props.isContextMenu ?
+                    <Button
 
-                            <>
-                                <div className={classnames('form-input', placeHolderStatus ? 'form-field-placeholder' : '')}>
-                                    <span> {typeof Output === "function" ? <Output /> : Output} </span>
+                        svgIcon={asButton.svgIcon}
+
+                        label={asButton.label}
+
+                        className={asButton.classnames}
+
+                        onClick={() => {
+
+                            onClick();
+
+                            createChange(!state.showOptions, "showOptions");
+
+                            createChange(true, "outsideEscape");
+
+                        }}
+                    />
+
+                }
+
+                {!asButton &&
+
+                    <div
+
+                        tabIndex={0}
+
+                        className={"select-box"}
+
+                        onClick={() => {
+
+                            onClick();
+
+                            createChange(!state.showOptions, "showOptions");
+
+                            createChange(true, "outsideEscape");
+
+                        }}
+
+                        onKeyDown={(e) => props.onKeyDown && props.onKeyDown(e)}
+
+                    >
+
+                        {
+                            !props.isContextMenu ?
+
+
+                                <>
+
+                                    <div className={classnames('form-input', placeHolderStatus ? 'form-field-placeholder' : '')}>
+
+                                        <span> {typeof Output === "function" ? <Output /> : Output} </span>
+
+                                    </div>
+
+                                    {props.noDropDownIcon !== true &&
+
+                                        <i dangerouslySetInnerHTML={{ __html: DownArrow || props.ellipseIcon }} />
+
+                                    }
+
+                                </>
+
+                                :
+
+                                <div className="_menu-selector">
+
+                                    {label &&
+
+                                        <p
+                                            className="form-field-title"
+                                            tabIndex={0}>
+                                            {label}
+                                        </p>
+
+                                    }
+
+
+                                    <div className="select-box-context">
+
+                                        <i dangerouslySetInnerHTML={{ __html: DownArrow || props.ellipseIcon }} />
+
+                                    </div>
+
                                 </div>
-                                <i className="fa fa-chevron-down down-icon" aria-hidden="true" />
-                            </>
-
-                            :
-
-                            <div className="_menu-selector">
-
-                                {label &&
-
-                                    <p
-                                        className="form-field-title"
-                                        tabIndex={0}>
-                                        {label}
-                                    </p>
-
-                                }
+                        }
 
 
-                                <div className="select-box-context">
-                                    <i className={props.ellipseIcon || "fas fa-ellipsis-h"} />
-                                </div>
+                    </div>
 
-                            </div>
-                    }
-
-
-                </div>
+                }
 
 
                 {
-                    showOptions &&
-                    <div className="select-pop">
+                    (showOptions || alwaysVisible) &&
+
+                    <div className={classnames( "select-pop fadeIn" , alwaysVisible && "always-visible" )} id="pop-">
 
                         {props.isSearchable &&
+
                             <FormField
+
                                 className="select-pop-search"
-                                placeHolder="Search Bank Name"
+
+                                placeHolder="Search Item"
+
                                 type="plain"
+
                                 value={searchValue}
-                                onChange={(e: string) => setSearchValue(e)} />}
+
+                                onChange={(e: string) => createChange(e, "searchValue")}
+
+                            />
+
+                        }
 
                         <ul>
 
                             {(props?.options || [])
-                                .filter((item: string | { [key: string]: any }) => props.isSearchable ? searchProcess(item) : true)
-                                .map((item: string | React.FC | any | { [key: string]: any }, index: number) =>
+
+                                // .filter((item: any )=> typeof item !== "function")
+
+                                .filter((item) => props.isSearchable ? searchProcess(item) : true)
+
+                                .map((item, index: number) =>
+
                                     <React.Fragment
+
                                         key={`option-${index}`} >
 
-                                        <DisplayOption
-                                            click={() => clickOption(item)}
+                                        <OptionInputItem
+
+                                            click={(item: string | { [key: string]: boolean | string }) => {
+
+                                                let clickableItem = item as { onClick?: () => void };
+
+                                                clickableItem?.onClick ? clickableItem.onClick() : clickOption(item);
+
+                                                setChange(true, "ignoreDefaultValue", setState);
+
+                                            }}
+
+                                            item={item}
+
                                             option={item}
+
                                             value={value}
+
                                             multiSelect={props.multiSelect}
+
                                             field={field}
+
                                             displayField={props.displayField}
-                                            toggle={() => setShowOptions(false)}
-                                            setOutsideEscape={setOutsideEscape}
+
+                                            toggle={() => createChange(false, "showOptions")}
+
+                                            setOutsideEscape={(e) => createChange(e, "outsideEscape")}
+
+                                            selection={state?.selection}
+
                                         />
 
                                     </React.Fragment>
                                 )}
 
-                            {AddPlacement &&
-                                <>
-                                    {typeof AddPlacement === 'function' ?
-                                        <AddPlacement />
-                                        :
-                                        <li className="add-field">
-                                            <i className="fa fa-plus" aria-hidden="true" />
-                                            <span> {AddPlacement["name"]}  </span>
-                                        </li>
-                                    }
-                                </>
+                            {withSubmission && onSubmit &&
+
+                                <Button
+
+                                    label={"Submit"}
+
+                                    className="select-submit"
+
+                                    onClick={() => onSubmit(state.selection)}
+
+                                />
+
                             }
 
                         </ul>
@@ -272,19 +396,51 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 };
 
 interface OptionsInputProp {
+
     label?: string,
+
     onChange(val: string | { [key: string]: any }): void,
+
     onClick?(): void,
+
+    defaultValue?: string,
+
     value: string | any[],
+
     placeHolder: string | React.FC,
+
     className: string,
-    options: string | ReactElement | any | { [key: string]: any, link?: string, externalLink?: string, label?: string },
-    addFunction: React.FC,
+
+    options: Array<objectOptionType | string | ReactElement>,
+
+    onSubmit?: (e: { [key: string]: string | boolean | null | undefined | number }) => void,
+
     multiSelect: boolean,
+
     isContextMenu: boolean,
+
     field: string,
+
     displayField: string,
+
     ellipseIcon?: string,
+
+    alwaysVisible?: boolean,
+
     onKeyDown?(e: React.KeyboardEvent): void,
-    isSearchable?: boolean
+
+    isSearchable?: boolean,
+
+    noDropDownIcon?: boolean,
+
+    selectorBoxClass?: string,
+
+    withSubmission?: boolean
+
+    asButton?: {
+        svgIcon?: string,
+        label: string,
+        classnames: string,
+    },
+
 };

@@ -1,0 +1,23 @@
+.landingLayout-header-categories {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 5px 19px rgba(0, 0, 0, 0.05);
+    border-top: 0.8px solid color(header-border);
+    padding: 24px 20px 16px;
+    background: color(white);
+
+    a {
+
+        @include font-size(x-small);
+
+        &:not(:last-child) {
+
+            margin-right: 48px;
+
+        }
+
+    }
+
+}

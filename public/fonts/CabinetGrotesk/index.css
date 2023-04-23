@@ -1,0 +1,7 @@
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'cabinet-grotesk';
+    font-weight: 700;
+    font-style: normal;
+    src: url('./CabinetGrotesk-Bold.otf');
+}

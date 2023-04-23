@@ -174,9 +174,11 @@
   }
 
   &-holder.settings-modal-holder {
+
     @include media-query(non-pc) {
       padding: 0;
     }
+
     display: block;
     justify-content: flex-end;
 
@@ -186,41 +188,32 @@
     }
 
     .modal {
+
       @include media-query('tablet') {
         width: 70%;
       }
+
       @include media-query('mobile') {
         width: 100%;
         max-width: 100%;
       }
+
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      margin-left: auto;
+      margin-right: auto;
       border-radius: 0;
       width: 40%;
       max-width: 490px;
       min-height: 100vh;
 
       &-default-alignment {
+
         justify-content: flex-start !important;
 
-        .modal-legend {
-          @include media-query(mobile) {
-            margin-top: 20px;
-          }
-          margin-top: 65px;
-        }
       }
     }
 
-    & .__parent {
-      @include media-query('mobile') {
-        justify-content: unset;
-        padding-top: 70px;
-      }
-      justify-content: center;
-    }
   }
 
   &-centered > .modal_body {

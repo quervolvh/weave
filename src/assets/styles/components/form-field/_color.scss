@@ -1,0 +1,102 @@
+.form-field-color {
+
+    max-width: 281px;
+    background: red;
+
+    &-box {
+
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    &-box-sphere {
+
+        margin-right: 14px;
+        margin-bottom: 16px;
+        border-radius: 100%;
+        width: 24px;
+        height: 24px;
+
+    }
+
+    &-box-sphere-red {
+
+        background: color(red);
+
+    }
+
+    &-box-sphere-green {
+
+        background: green;
+
+    }
+
+    &-box-sphere-cream {
+
+        background: #F2D0A4;
+
+    }
+
+    &-box-sphere-pink {
+
+        background: pink;
+
+    }
+
+    &-box-sphere-black {
+
+        background: black;
+
+    }
+
+    &-box-sphere-white {
+
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+        background: white;
+
+    }
+
+    &-box-sphere-purple {
+
+        background: purple;
+
+    }
+
+    &-box-sphere-yellow {
+
+        background: yellow;
+
+    }
+
+    &-box-sphere-indigo {
+
+        background: indigo;
+
+    }
+
+    &-box-sphere-blue {
+
+        background: blue;
+
+    }
+
+    &-box-sphere-grey {
+
+        background: grey;
+
+    }
+
+    &-box-sphere-beige {
+
+        background: beige;
+
+    }
+
+    &-box-sphere-chocolate {
+
+        background: chocolate;
+
+    }
+
+}

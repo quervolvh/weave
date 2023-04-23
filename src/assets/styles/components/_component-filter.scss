@@ -1,0 +1,107 @@
+.component-filter {
+  @include media-query(real-mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-left: 0;
+  background: color(white);
+
+  &,
+  &-stick {
+    @include media-query(non-pc) {
+      top: 65px !important;
+    }
+
+    position: sticky;
+    top: -20px !important;
+  }
+
+  &-stick {
+    @include media-query(non-pc) {
+      top: 65px !important;
+    }
+
+    position: sticky;
+    top: -20px !important;
+  }
+
+  &-box-button {
+
+    @include media-query(real-mobile) {
+      padding: 10px !important;
+      width: 38vw;
+
+      span {
+        font-size: 12px !important;
+      }
+    }
+
+    @include media-query(extreme-mobile) {
+      padding: 15px 10px !important;
+
+      svg {
+        display: none;
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+    border: 1px solid color(productBackground);
+    padding: 10px 20px !important;
+    background: color(productBackground);
+
+    .button-title > span {
+      margin-right: 11.4px;
+      font-family: $main-font;
+      font-size: map-get($small-font-sizes, medium);
+      font-weight: 400;
+      color: color(primary);
+    }
+  }
+
+  &-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-field-title {
+
+      @include font-size(regular);
+      font-weight: 700;
+
+    }
+
+    &-select-buttons {
+      display: flex;
+      margin: 30px auto;
+      width: 100%;
+
+      .button {
+
+        margin: auto;
+        max-width: 40%;
+
+        &:first-child {
+
+          background: color(productBackground);
+          color: color(primary);
+
+        }
+
+      }
+
+    }
+
+    &-active {
+      span {
+        margin-left: 0;
+      }
+    }
+  }
+}

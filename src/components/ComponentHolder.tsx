@@ -8,29 +8,25 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, reffer, ...props 
         <>
             {(visibility === false ? visibility : true) &&
 
-                <div 
-                    
-                        className={`component-holder ${props.className || ""}`}
-                    
-                        {...(reffer ? { ref : reffer } : {} )}
+                <div
 
-                        >
+                    className={`component-holder ${props.className || ""}`}
+
+                    {...(reffer ? { ref: reffer } : {})}
+
+                >
 
                     {(props.title || props.customHeader || props.headerControl) &&
 
                         <>
-                            {!props.customHeader ?
 
-                                < ComponentHeader 
-                                    {...props} 
-                                    control={props.headerControl} 
-                                    className={props.headerClass || ""} 
-                                />
+                            < ComponentHeader
+                                {...props}
+                                control={props.headerControl}
+                                className={props.headerClass || ""}
+                            />
 
-                                :
-
-                                <props.customHeader />
-                            }
+                            {props.customHeader && <props.customHeader />}
 
                         </>
                     }

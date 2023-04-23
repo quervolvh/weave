@@ -44,3 +44,24 @@ export const Favorite = `<svg width="20" height="20" viewBox="0 0 20 20" fill="n
 <path d="M10.5165 17.3416C10.2332 17.4416 9.7665 17.4416 9.48317 17.3416C7.0665 16.5166 1.6665 13.0749 1.6665 7.24159C1.6665 4.66659 3.7415 2.58325 6.29984 2.58325C7.8165 2.58325 9.15817 3.31659 9.99984 4.44992C10.8415 3.31659 12.1915 2.58325 13.6998 2.58325C16.2582 2.58325 18.3332 4.66659 18.3332 7.24159C18.3332 13.0749 12.9332 16.5166 10.5165 17.3416Z" stroke="#585755" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
+
+export const LeftArrow = `<svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.50112 19.24L1.89445 11.6333C0.99612 10.735 0.99612 9.26501 1.89445 8.36668L9.50112 0.76001" stroke="#585755" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const TrailArrow = `<svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.939453 12.28L5.28612 7.9333C5.79945 7.41997 5.79945 6.57997 5.28612 6.06664L0.939453 1.71997" stroke="#232322" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const FilterIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.40039 2.1001H18.6004C19.7004 2.1001 20.6004 3.0001 20.6004 4.1001V6.3001C20.6004 7.1001 20.1004 8.1001 19.6004 8.6001L15.3004 12.4001C14.7004 12.9001 14.3004 13.9001 14.3004 14.7001V19.0001C14.3004 19.6001 13.9004 20.4001 13.4004 20.7001L12.0004 21.6001C10.7004 22.4001 8.90039 21.5001 8.90039 19.9001V14.6001C8.90039 13.9001 8.50039 13.0001 8.10039 12.5001L4.30039 8.5001C3.80039 8.0001 3.40039 7.1001 3.40039 6.5001V4.2001C3.40039 3.0001 4.30039 2.1001 5.40039 2.1001Z" stroke="#008080" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.93 2.1001L6 10.0001" stroke="#008080" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const DownArrow = `<svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.9201 0.950195L10.4001 7.4702C9.63008 8.2402 8.37008 8.2402 7.60008 7.4702L1.08008 0.950195" stroke="#030200" stroke-width="1.66638" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;

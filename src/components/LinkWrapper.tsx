@@ -11,15 +11,16 @@ export const LinkWrapper: React.FC<Props> = ({ children, link, externalLink, cla
 
             {(link || externalLink) ?
 
-                <Link href={String(link || externalLink)}>
-                    <a
-                        target={externalLink && "_blank"}
-                        className={classnames(className || "", "link-wrapper")}
-                        tabIndex={0}
-                        role="button"
-                    >
-                        {children}
-                    </a>
+                <Link
+                    href={String(link || externalLink)}
+                    target={externalLink && "_blank"}
+                    className={classnames(className || "", "link-wrapper")}
+                    tabIndex={0}
+                    role="button"
+                >
+
+                    {children}
+
                 </Link>
 
                 :

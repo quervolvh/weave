@@ -4,6 +4,7 @@ import { MetaHead } from 'components';
 import { classnames } from 'utils';
 import LandingLayoutFooterCr from './LandingLayoutFooterCr';
 import LandingLayoutFooter from './Footer';
+import { LandingLayoutTrail } from './LandingLayoutTrail';
 
 export const LandingLayout: React.FC<Props> = ({
     headTitle,
@@ -14,32 +15,40 @@ export const LandingLayout: React.FC<Props> = ({
     className = "",
     bodyClass,
     bodyAlignment,
+    trail,
     ...props
 }) => {
     return (
         <>
-            
+
             <MetaHead
                 title={headTitle}
             />
 
-            <div 
-            
-            id={"landingLayout"}
+            <div
 
-            className={`landingLayout ${className}`}>
+                id={"landingLayout"}
+
+                className={`landingLayout ${className}`}>
 
                 {
                     showHeader &&
+
                     <Header
                         isMobile={isMobile}
                         deviceWidth={deviceWidth}
                     />
+
                 }
 
+                {trail && <LandingLayoutTrail trail={trail} />}
+
                 <div
+
                     className={classnames("landing-layout-body", bodyAlignment === false && "default", bodyClass && bodyClass)}
+
                     id={"landing-layout-body"}
+
                 >
                     {props.children}
 
@@ -74,6 +83,6 @@ interface Props {
     showFooter?: boolean,
     showHeader?: boolean,
     bodyAlignment?: boolean,
+    trail?: { title: string, link: string }[]
     bodyClass?: string
 }
-
