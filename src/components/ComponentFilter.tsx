@@ -63,6 +63,10 @@ interface Props {
 
             multiSelect?: boolean,
 
+            minValue?: number,
+
+            maxValue?: number,
+
             alwaysVisible?: boolean,
             
             type?: "options" | "slider" | 'color',

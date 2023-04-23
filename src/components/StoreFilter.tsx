@@ -68,7 +68,7 @@ export const StoreFilter: React.FC = ({ }) => {
 
                 ],
 
-                onSubmit: (e) => console.log(e),
+                onSubmit: () => null,
 
             }}
 

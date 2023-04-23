@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { classnames } from 'utils';
 
@@ -13,7 +13,7 @@ export const LinkWrapper: React.FC<Props> = ({ children, link, externalLink, cla
 
                 <Link
                     href={String(link || externalLink)}
-                    target={externalLink && "_blank"}
+                    {...(externalLink ? { target: "_blank" } : {})}
                     className={classnames(className || "", "link-wrapper")}
                     tabIndex={0}
                     role="button"
@@ -38,8 +38,8 @@ export const LinkWrapper: React.FC<Props> = ({ children, link, externalLink, cla
 }
 
 interface Props {
-    children: React.ReactChildren,
-    link?: string,
-    externalLink?: string,
+    children: React.ReactElement,
+    link?: string | null,
+    externalLink?: string | null,
     className?: string
 }
