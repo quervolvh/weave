@@ -3,7 +3,7 @@ import { ComponentHolder, Pagination } from 'components';
 import { StoreFilter } from 'components/StoreFilter';
 import { ProductItem } from 'common/Product/ProductItem';
 
-export const StoreTop: React.FC = ({ }) => {
+export const StoreTop: React.FC<{ title?: string }> = ({ title }) => {
 
     return (
 
@@ -11,7 +11,7 @@ export const StoreTop: React.FC = ({ }) => {
 
             className='store-top'
 
-            title='Jewellery & Accessories'
+            title={title}
 
             customHeader={StoreFilter}
 

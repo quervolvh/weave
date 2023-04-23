@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import { classnames } from 'utils';
 
@@ -38,7 +38,7 @@ export const LinkWrapper: React.FC<Props> = ({ children, link, externalLink, cla
 }
 
 interface Props {
-    children: React.ReactChild,
+    children: React.ReactChildren,
     link?: string,
     externalLink?: string,
     className?: string

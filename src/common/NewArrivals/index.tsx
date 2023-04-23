@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { ComponentHolder } from "components";
 import { ProductItem } from "common/Product/ProductItem";
 
-export const NewArrivals: React.FC<Props> = ({ title }) => {
+export const NewArrivals: React.FC<Props> = ({ title, subtitle, headerControl, headerClass }) => {
 
     return (
 
@@ -12,9 +12,13 @@ export const NewArrivals: React.FC<Props> = ({ title }) => {
 
             bodyClass="new-arrivals-block"
 
-            title={ title || "New Arrivals"}
+            headerClass={headerClass}
 
-            subtitle="Shop newly dropped items"
+            title={title}
+
+            subtitle={subtitle}
+
+            headerControl={headerControl}
 
         >
 
@@ -196,5 +200,10 @@ interface Props {
 
     title?: string
 
-}
+    subtitle?: string,
 
+    headerControl?: ReactElement,
+
+    headerClass?: string
+
+}

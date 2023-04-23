@@ -65,3 +65,9 @@ export const DownArrow = `<svg width="18" height="9" viewBox="0 0 18 9" fill="no
 <path d="M16.9201 0.950195L10.4001 7.4702C9.63008 8.2402 8.37008 8.2402 7.60008 7.4702L1.08008 0.950195" stroke="#030200" stroke-width="1.66638" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
+
+export const ContinueArrow = `<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.99967 15.1666H9.99967C13.333 15.1666 14.6663 13.8333 14.6663 10.4999V6.49992C14.6663 3.16659 13.333 1.83325 9.99967 1.83325H5.99967C2.66634 1.83325 1.33301 3.16659 1.33301 6.49992V10.4999C1.33301 13.8333 2.66634 15.1666 5.99967 15.1666Z" stroke="#2521D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.16016 10.8534L9.50682 8.50006L7.16016 6.14673" stroke="#2521D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;

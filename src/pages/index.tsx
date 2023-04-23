@@ -18,12 +18,12 @@ const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
             showHeader={true}
         >
 
-            <Banner 
+            <Banner
 
                 bannerImage='assets/landing/banner.png'
-            
-                label="Shop Chivours summer collection to spice up your summer" 
-                
+
+                label="Shop Chivours summer collection to spice up your summer"
+
                 buttonInfo={{
 
                     label: "View collection",
@@ -31,12 +31,18 @@ const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
                     link: ""
 
                 }}
-                
+
             />
 
             <Discover />
 
-            <NewArrivals />
+            <NewArrivals
+
+                title="New Arrivals"
+
+                subtitle="Shop newly dropped items"
+
+            />
 
             <LandingInformation />
 

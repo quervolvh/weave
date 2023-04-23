@@ -30,15 +30,18 @@ const Store: React.FC<Props> = ({ isMobile, deviceWidth }) => {
                 }
 
             ]}
+
             showFooter={true}
+
             showHeader={true}
+
         >
 
             <Categories />
 
-           <StoreTop />
+            <StoreTop title={'Jewellery & Accessories'} />
 
-           <NewArrivals title='Top Sellers' />
+            <NewArrivals title='Top Sellers' />
 
         </LandingLayout >
 

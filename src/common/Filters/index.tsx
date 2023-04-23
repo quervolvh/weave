@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, FormField, Modal } from "components";
 import { FilterIcon } from "components";
 import { change, classnames, primitiveObj } from "utils";
-import { generateOptionConsiderations } from "utils/input";
+import { generateOptionConsiderations } from "utils/Input";
 import { useGetParamsOnLoad } from "hooks/useGetParamsOnLoad";
 
 export const Filters: React.FC<Props> = ({ filterOptions, onReset }) => {

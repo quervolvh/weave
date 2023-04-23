@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { ComponentHeader } from 'components';
 import { classnames } from 'utils';
 
-export const ComponentHolder: React.FC<Props> = ({ visibility, reffer, ...props }) => {
+export const ComponentHolder: React.FC<Props> = ({ visibility, REF, ...props }) => {
 
     return (
         <>
@@ -12,7 +12,7 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, reffer, ...props 
 
                     className={`component-holder ${props.className || ""}`}
 
-                    {...(reffer ? { ref: reffer } : {})}
+                    {...(REF ? { ref: REF } : {})}
 
                 >
 
@@ -20,7 +20,7 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, reffer, ...props 
 
                         <>
 
-                            < ComponentHeader
+                            <ComponentHeader
                                 {...props}
                                 control={props.headerControl}
                                 className={props.headerClass || ""}
@@ -41,7 +41,7 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, reffer, ...props 
 }
 
 interface Props {
-    headerControl?: ReactElement<any, any>,
+    headerControl?:  ReactElement<any, any>,
     visibility?: boolean,
     dangerousTitle?: string,
     title?: string,
@@ -50,5 +50,6 @@ interface Props {
     className?: string,
     bodyClass?: string,
     headerClass?: string,
-    reffer?: any
+    trail?: { title: string, link: string }[]
+    REF?: any
 }
