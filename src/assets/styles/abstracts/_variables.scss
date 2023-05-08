@@ -18,6 +18,12 @@ $colors: (
   header-border: rgba(239, 239, 238, 1),
   inactive-text: #E4E4E3,
   faux-blue: #2521D4,
+  line: rgba(233, 233, 233, 1),
+  review-grey: rgba(248, 248, 248, 1),
+  review-category-border: rgba(16, 11, 0, 0.15),
+  more-reviews-button: rgba(241, 250, 250, 1),
+  product-tag: #E3C57E,
+  light-tag: rgba(252, 246, 237, 1),
   
   
   tertiary-text:  rgba(117, 116, 113, 1),
@@ -29,9 +35,10 @@ $colors: (
   footer-text: rgba(146, 145, 142, 1),
   dark: rgba(35, 35, 34, 1),
   black_: rgba(0,0,0,1),
+  black_one: #100B00,
   input-border:  #C4C4C4,
   input-bg: #f3f3f3,
-  input-placeholder: rgba(185, 185, 185, 1),
+  input-placeholder: rgba(135, 133, 128, 1),
   modal-overlay: rgba(0, 0, 0, 0.2),
   success: rgba(75, 222, 151, 1),
   empty-item: rgba(241, 90, 1, 0.5)

@@ -1,0 +1,51 @@
+.new-collection {
+
+    @extend %body-width-and-padding;
+
+    .component-header h2 {
+
+        @include font-size(l-large);
+        margin-bottom: 32px;
+
+    }
+
+    &-items {
+
+        display: flex;
+
+        .new-collection-item:not(:last-child) {
+
+            margin-right: 31.5px;
+
+        }
+
+    }
+
+    &-item {
+
+        width: 100%;
+        max-width: 411px;
+
+        &-image {
+
+            margin-bottom: 24px;
+
+            img {
+
+                width: 100%;
+                height: 100%;
+
+            }
+
+        }
+
+        p {
+
+            @include font-size(medium);
+            font-family: $header-font;
+
+        }
+
+    }
+
+}

@@ -1,0 +1,64 @@
+.store-faq {
+
+    @extend %body-width-and-padding;
+    margin-bottom: 300px;
+    padding-top: 0;
+
+    .component-header {
+
+        border-top: 3px solid color(line);
+        padding-top: 30px;
+
+    }
+
+    .component-header h2 {
+
+        @include font-size(l-large);
+
+    }
+
+    .view-formatter-wrapper-box {
+
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .view-formatter-regular-value  {
+
+        margin-top: 18px !important;
+
+    }
+
+    .view-formatter {
+
+        width: 100%;
+        max-width: unset !important;
+
+        p {
+
+            @include font-size(medium);
+
+        }
+
+    }
+
+    .view-formatter.collapsible {
+
+        padding-left: 0;
+
+    }
+
+    .view-formatter.collapsible-show {
+
+        padding-left: 33px;
+
+    }
+
+    .view-formatter-title-box p {
+
+        @include font-size(medium);
+
+    }
+
+}

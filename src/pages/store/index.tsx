@@ -1,10 +1,14 @@
 import React from 'react';
 import { LandingLayout } from 'layout';
-import { Categories } from 'common/Categories';
-import { StoreTop } from 'common/Store/StoreTop';
-import { NewArrivals } from 'common/NewArrivals';
+import { StoreProducts } from 'common/Store/StoreProducts';
+import { useRouter } from 'next/router';
+import { StoreCollection } from 'common/Store/StoreCollection';
 
 const Store: React.FC<Props> = ({ isMobile, deviceWidth }) => {
+
+    const router = useRouter();
+
+    const { view } = router.query;
 
     return (
 
@@ -13,7 +17,7 @@ const Store: React.FC<Props> = ({ isMobile, deviceWidth }) => {
             isMobile={isMobile}
             className='store'
             deviceWidth={deviceWidth}
-            trail={[
+            trail={view ? undefined : [
 
                 {
 
@@ -37,11 +41,9 @@ const Store: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
         >
 
-            <Categories />
+            {view === "with-store" && <StoreCollection />}
 
-            <StoreTop title={'Jewellery & Accessories'} />
-
-            <NewArrivals title='Top Sellers' />
+            {!view && <StoreProducts />}
 
         </LandingLayout >
 

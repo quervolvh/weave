@@ -1,0 +1,58 @@
+.rating-bar {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 13.5px;
+
+    &.dim {
+
+        opacity: 0.3;
+
+    }
+
+    &-star path {
+
+        fill: color(ratingStar);
+
+    }
+
+    &-cursor {
+
+        display: flex;
+
+        p {
+
+            padding-right: 8px;
+            padding-left: 8px;
+
+            &:last-child {
+
+                padding-right: 0;
+
+            }
+
+        }
+
+    }
+
+    &-cursor-block {
+
+        position: relative;
+        margin: auto;
+        border-radius: 16px;
+        width: 246px;
+        height: 11px;
+        background: color(line);
+
+        span {
+
+            position: absolute;
+            border-radius: 16px;
+            height: 11px;
+            background: color(ratingStar);
+
+        }
+
+    }
+
+}

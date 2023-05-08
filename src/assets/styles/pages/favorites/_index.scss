@@ -46,8 +46,11 @@
 
         &-label {
 
+            @extend %body-width-and-padding;
             @include font-size(large);
             margin-bottom: 20px;
+            padding-top: 0;
+            padding-bottom: 0;
             text-align: center;
             color: color(subBlack);
 

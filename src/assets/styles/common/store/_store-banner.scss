@@ -1,0 +1,144 @@
+.store-banner {
+
+    display: flex;
+    flex-direction: column;
+
+    &-top {
+
+        height: 400px;
+
+        img {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+    }
+
+    &-bottom-wrapper {
+
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    &-bottom {
+
+        @extend %body-width-and-padding;
+        display: flex;
+        align-items: center;
+        padding-top: 26px;
+        padding-bottom: 26px;
+
+        &-left {
+
+            display: flex;
+            margin-right: 120px;
+            width: 300px;
+
+        }
+
+        &-info {
+
+            display: flex;
+            margin-top: 5px;
+
+            &-thumbnail {
+
+                margin-right: 13px;
+                width: 72px;
+                height: 72px;
+
+                img {
+
+                    width: 100%;
+                    height: 100%;
+
+                }
+
+            }
+
+            &-text p {
+
+                @include font-size(regular);
+                color: color(subBlack);
+
+            }
+
+            &-text-ratings {
+
+                display: flex;
+
+                p {
+
+                    margin-right: 10px;
+                    border-right: 1px solid color(line);
+                    padding-right: 10px;
+
+                }
+
+            }
+
+        }
+
+        &-right {
+
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+
+            .view-formatter-wrapper-box {
+
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 0;
+                max-width: 260px;
+
+                .view-formatter-title-box p {
+
+                    @include font-size(medium);
+                    font-family: $header-font;
+
+                }
+
+                .view-formatter-regular-value {
+
+                    @include font-size(regular);
+                    font-weight: 400;
+
+                }
+
+            }
+
+        }
+
+        &-link {
+
+            display: flex;
+            align-items: center;
+            margin-bottom: auto;
+            margin-left: auto;
+            padding-top: 10px;
+
+            span,
+            div {
+
+                display: flex;
+                color: color(faux-blue);
+
+            }
+
+            span:first-child {
+
+                margin-top: 2px;
+                margin-right: 5px;
+                height: max-content;
+
+            }
+
+        }
+
+    }
+
+}

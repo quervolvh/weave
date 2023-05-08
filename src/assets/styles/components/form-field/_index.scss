@@ -1,7 +1,7 @@
 .form-field {
   @extend .strickFadeIn;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 
   &.title-left {
     .form-field-title {
@@ -96,8 +96,9 @@
 
   p,
   &-title {
-    @include font-size(small);
-    margin: 10px 0;
+    @include font-size(regular);
+    margin: 16px 0;
+    font-weight: 500;
 
     &-block {
       &-flex {
@@ -119,7 +120,6 @@
     border: $inputBorder;
     padding: 11px 24px;
     width: 100%;
-    background: color(input-bg);
     line-height: 1.8;
     font-family: unset;
     transition: color 0.2s, background 0.2s;

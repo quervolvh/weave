@@ -9,7 +9,7 @@
     border-radius: 10px;
     padding: 15px;
 
-    &.icon-align > .view-formatter-left-icon {
+    &.icon-align>.view-formatter-left-icon {
       margin-top: auto;
       margin-bottom: auto;
     }
@@ -40,7 +40,7 @@
     &.dual {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.0523656);
 
-      .view-formatter-left-icon > svg {
+      .view-formatter-left-icon>svg {
         width: 100%;
         max-width: 23px;
         height: 100%;
@@ -90,21 +90,11 @@
     &:first-child,
     &.view-formatter-p {
       margin-bottom: 5px;
-      text-transform: capitalize;
-      font-weight: 500;
     }
 
     &:last-child:not(&.view-formatter-p) {
       margin-top: 5px;
     }
-  }
-
-  &.extra-bold > div > p:first-of-type {
-    font-weight: 500;
-  }
-
-  &.extra-bold > span > p:first-of-type {
-    font-family: $main-font !important;
   }
 
   &.reverse {
@@ -115,10 +105,6 @@
   &.classic {
     display: flex;
     align-items: center;
-
-    p:first-child {
-      font-weight: 500;
-    }
   }
 
   &.settings-item {
@@ -132,11 +118,11 @@
       @extend .settings-item;
     }
 
-    &-flex > div:not(:first-of-type) {
+    &-flex>div:not(:first-of-type) {
       display: none;
     }
 
-    &-flex > div:first-of-type {
+    &-flex>div:first-of-type {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -189,10 +175,6 @@
       margin-bottom: 20px;
     }
 
-    p {
-      text-transform: unset;
-    }
-
     span {
       max-height: 0;
       overflow: hidden;
@@ -225,4 +207,46 @@
     width: 16px !important;
     height: 16px !important;
   }
+}
+
+.view-formatter.collapsible {
+
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 1px solid rgba(233, 233, 233, 1);
+  padding: 24px 33px;
+  max-width: 509px;
+  transition: 0.2s ease;
+
+  .view-formatter-regular-value {
+
+    margin-top: 16px !important;
+
+  }
+
+  p {
+
+    margin-bottom: 0 !important;
+    transition: 0.2s ease;
+
+  }
+
+  &.collapsible-show {
+
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom: 0 solid rgba(233, 233, 233, 1);
+    background: color(fair-background);
+
+  }
+
+  .view-formatter-title-box p {
+
+    @include font-size(p-large);
+    font-family: $header-font;
+    font-weight: 700;
+
+  }
+
 }

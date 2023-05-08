@@ -36,53 +36,6 @@
             margin-left: 50px;
             width: 638px;
 
-            .view-formatter-wrapper-box {
-
-                padding: 0;
-
-            }
-
-            .view-formatter-regular-value  {
-
-                margin-top: 16px !important;
-
-            }
-
-            .view-formatter {
-
-                border-radius: 8px;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-                border-bottom: 1px solid rgba(233, 233, 233, 1);
-                padding: 24px 33px;
-                max-width: 509px;
-                transition: 0.2s ease;
-
-                p {
-
-                    margin-bottom: 0 !important;
-                    transition: 0.2s ease;
-
-                }
-
-            }
-
-            .view-formatter.collapsible-show {
-
-                border-bottom-right-radius: 8px;
-                border-bottom-left-radius: 8px;
-                border-bottom: 0 solid rgba(233, 233, 233, 1);
-                background: color(fair-background);
-
-            }
-
-            .view-formatter-title-box p {
-
-                @include font-size(p-large);
-                font-weight: 700;
-
-            }
-
         }
 
     }

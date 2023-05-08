@@ -4,10 +4,10 @@
   align-items: center;
   outline: none;
   border-radius: 8px;
-  border: 1px solid color(dark);
-  padding: 13px 24px;
+  border: 1px solid color(line);
+  padding: 17px 16px;
   padding-right: 0;
-  height: 50px;
+  height: 56px;
   background: color(white);
   transition: color 0.2s, background 0.2s;
   transition-timing-function: ease;
@@ -55,7 +55,7 @@
     }
 
     &:hover {
-      border: 1px solid color(red);
+      border: 1px solid color(secondary-text);
       // background: darken(#e2e8f0, 10);
     }
   }
@@ -67,7 +67,7 @@
 
   &:hover,
   &:focus {
-    border: 1px solid color(red);
+    border: 1px solid color(secondary-text);
   }
 
   &-box {

@@ -1,0 +1,26 @@
+.store-collections {
+
+    &-inventory {
+
+        .component-header h2 {
+
+            @include font-size(l-large);
+            margin-bottom: 32px;
+
+        }
+
+        .store-top-controls {
+
+            justify-content: center;
+
+        }
+
+        .store-top-controls-label {
+
+            display: none;
+
+        }
+
+    }
+
+}

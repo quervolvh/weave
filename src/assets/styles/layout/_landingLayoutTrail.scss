@@ -1,28 +1,28 @@
 .landingLayout-trail {
 
-    @include media-query(pc-high-resolution) {
+    // @include media-query(pc-high-resolution) {
 
-        margin-bottom: -60px;
+    //     margin-bottom: -60px;
 
-    }
+    // }
 
-    @include media-query(pc-low-resolution) {
+    // @include media-query(pc-low-resolution) {
 
-        margin-bottom: -20px;
+    //     margin-bottom: -20px;
 
-    }
+    // }
 
-    @include media-query(non-pc) {
+    // @include media-query(non-pc) {
 
-        margin-bottom: -30px;
+    //     margin-bottom: -30px;
 
-    }
+    // }
 
-    @include media-query(mobile) {
+    // @include media-query(mobile) {
 
-        margin-bottom: -90px;
+    //     margin-bottom: -90px;
 
-    }
+    // }
 
     @extend %body-width-and-padding;
     display: flex;

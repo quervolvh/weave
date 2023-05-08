@@ -25,6 +25,13 @@
 @import 'common/discover-store';
 @import 'common/new-arrivals';
 @import 'common/product-item';
+@import 'common/store/store-faq';
+@import 'common/store/review-item';
+@import 'common/store/new-collections';
+@import 'common/store/store-banner';
+@import 'common/store/review-controls';
+@import 'common/store/store-review';
+@import 'common/store/store-description';
 
 //5. Components
 @import 'components/blog-item';
@@ -41,11 +48,12 @@
 @import 'components/form-field/radio';
 @import 'components/form-field/select';
 @import 'components/form-field/switch';
+@import 'components/item-type-toggle';
 @import 'components/modal';
 @import 'components/pagination';
+@import 'components/rating-bar';
 @import 'components/ratings';
-@import 'components/review-item';
-@import 'components/service-item';
+@import 'components/tabLayout';
 @import 'components/table';
 @import 'components/toast';
 @import 'components/view-formatter';
@@ -53,7 +61,10 @@
 //6. Pages
 @import 'pages/favorites/index';
 @import 'pages/landing/index';
+@import 'pages/product/index';
+@import 'pages/product/product-rating-review';
 @import 'pages/store/index';
+@import 'pages/store/store-collections';
 
 //7. Transitions
 @import 'transitions/content-loader';

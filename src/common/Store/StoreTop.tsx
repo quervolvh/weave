@@ -2,20 +2,20 @@ import React from 'react';
 import { ComponentHolder, Pagination } from 'components';
 import { StoreFilter } from 'components/StoreFilter';
 import { ProductItem } from 'common/Product/ProductItem';
+import { classnames } from 'utils';
 
-export const StoreTop: React.FC<{ title?: string }> = ({ title }) => {
+export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ title , className }) => {
 
     return (
 
         <ComponentHolder
 
-            className='store-top'
-
+            className={classnames('store-top' , className )}
             title={title}
 
             customHeader={StoreFilter}
 
-            bodyClass='store-top-block'
+            bodyClass={'store-top-block'}
 
         >
 
