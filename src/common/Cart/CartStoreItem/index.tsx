@@ -92,7 +92,7 @@ interface Props {
 
     thumbnail: string,
 
-    controls?: boolean,
+    controls?: { quantity?: boolean, itemControls?: boolean },
 
     label: string,
 

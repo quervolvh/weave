@@ -48,7 +48,7 @@ export const FormFieldPhoneBox: React.FC<Props> = (
 
             {label && <p className='form-field-title text-left'> {label} </p>}
 
-            <div className={classnames('form-field-phone-box', className, focus && "mock-border")}>
+            <div className={classnames('form-field-phone-box', className)}>
 
                 <FormField
                     type="option"

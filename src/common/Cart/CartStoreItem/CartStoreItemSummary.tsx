@@ -61,7 +61,7 @@ export const CartStoreItemSummary: React.FC<Props> = ({ className }) => {
 
             <div className="cart-store-item-summary-table">
 
-                {items.map((item, index) => <ViewFormatter key={`${item.label}-${index}`} {...item} />)}
+                {items.map((item, index) => <ViewFormatter key={`${item.title}-${index}`} {...item} />)}
 
             </div>
 
