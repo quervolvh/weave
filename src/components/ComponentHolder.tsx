@@ -16,6 +16,8 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, REF, ...props }) 
 
                 >
 
+                    {props.preHeaderControl && <props.preHeaderControl />}
+
                     {(props.title || props.customHeader || props.headerControl) &&
 
                         <>
@@ -41,7 +43,8 @@ export const ComponentHolder: React.FC<Props> = ({ visibility, REF, ...props }) 
 }
 
 interface Props {
-    headerControl?:  ReactElement<any, any>,
+    headerControl?: ReactElement<any, any>,
+    preHeaderControl?: React.FC,
     visibility?: boolean,
     dangerousTitle?: string,
     title?: string,
@@ -50,6 +53,6 @@ interface Props {
     className?: string,
     bodyClass?: string,
     headerClass?: string,
-    trail?: { title: string, link: string }[]
+    trail?: { title: string, link: string, onClick?: ()=> void }[]
     REF?: any
 }

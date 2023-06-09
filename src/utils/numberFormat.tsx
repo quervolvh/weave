@@ -15,11 +15,11 @@ export const numberFormat = ( number_? : number , currency? : string | null ) : 
         currency = currency || 'NGN';
         const locale = 'en-NG';
 
-        return Intl.NumberFormat(locale.trim(), { style: 'currency', currency : currency  }).format(number_);
+        return Intl.NumberFormat(locale.trim(), { style: 'currency', currency : currency , maximumFractionDigits : 0 }).format(number_);
 
     } catch {
 
-        return Intl.NumberFormat('en-NG', { style: 'currency', currency: currency || 'NGN' }).format(0.00);
+        return Intl.NumberFormat('en-NG', { style: 'currency', currency: currency || 'NGN' , maximumFractionDigits: 0 }).format(0.00);
 
     }
 

@@ -19,6 +19,21 @@
 
         .product-item {
 
+            @include media-query(tablet-and-mobile) {
+
+                min-width: 210px;
+                max-width: 300px;
+
+            }
+
+            @include media-query(mobile-break) {
+
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+
+            }
+
             margin-right: 2%;
             margin-bottom: 48px;
             width: 23.5%;

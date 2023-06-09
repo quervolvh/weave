@@ -53,6 +53,7 @@ export const PlainInput: React.FC<Props> = (
             onClick={() => buttonProps.onClick && buttonProps.onClick()}
             disabled={buttonProps.disabled}
             className={buttonProps.className || ""}
+            svgIcon={buttonProps.svgIcon}
         />
 
     );
@@ -152,7 +153,7 @@ interface Props {
     onKeyDown?(e: React.KeyboardEvent): void,
     required?: boolean,
     withBorder?: boolean,
-    withButton?: { label: string, onClick?(): void, className?: string, disabled?: boolean },
+    withButton?: { label?: string, onClick?(): void, className?: string, disabled?: boolean, svgIcon?: string },
     withLabelButton?: { label: string, onClick?(): void, className?: string, disabled?: boolean },
     withExtraLabelComponent?: React.FC | React.ReactElement,
 }

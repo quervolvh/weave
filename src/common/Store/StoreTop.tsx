@@ -23,7 +23,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -47,7 +47,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -71,7 +71,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -95,7 +95,8 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
+
 
                 }}
 
@@ -119,7 +120,8 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
+
 
                 }}
 
@@ -143,7 +145,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -167,7 +169,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -191,7 +193,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -215,7 +217,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -239,7 +241,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -263,7 +265,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 
@@ -287,7 +289,7 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 storeInfo={{
 
-                    label: "Chivours"
+                    label: "CHIVOURS"
 
                 }}
 

@@ -20,6 +20,13 @@
 
         div {
 
+            @include media-query(mobile) {
+
+                width: 13.9px;
+                height: 13.9px;
+
+            }
+
             border-radius: 100%;
             width: 24px;
             height: 24px;

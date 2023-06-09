@@ -1,5 +1,12 @@
 .product-item {
 
+    @include media-query(tablet) {
+
+        min-width: 210px;
+        max-width: 300px;
+
+    }
+
     display: flex;
     flex-direction: column;
     min-width: 312px;
@@ -36,6 +43,12 @@
 
     h4 {
 
+        @include media-query(non-pc) {
+
+            @include font-size-override(regular);
+
+        }
+
         @include font-size(small);
         margin-bottom: 8px;
 
@@ -64,6 +77,12 @@
 
     &-store-label {
 
+        @include media-query(non-pc) {
+
+            @include font-size-override(small);
+
+        }
+
         @include font-size(x-small);
         margin-top: 4px;
         color: color(secondary-text);
@@ -80,6 +99,12 @@
         padding: 8px 16px;
 
         h2 {
+
+            @include media-query(mobile) {
+
+                @include font-size-override(small);
+
+            }
 
             @include font-size(medium);
 

@@ -7,7 +7,7 @@
 @import 'abstracts/modern-normalize';
 @import 'abstracts/extends';
 
-// 2. Base
+//2. Base
 @import 'base/base';
 @import 'base/helpers';
 
@@ -21,6 +21,7 @@
 @import 'common/banner';
 @import 'common/categories';
 @import 'common/category-item';
+@import 'common/checkout/contact-form';
 @import 'common/discover';
 @import 'common/discover-store';
 @import 'common/new-arrivals';
@@ -36,14 +37,19 @@
 //5. Components
 @import 'components/blog-item';
 @import 'components/button';
+@import 'common/cart/cart-item';
+@import 'common/cart/cart-store-item';
+@import 'common/checkout/contact-form-shipping';
 @import 'components/component-filter';
 @import 'components/component-header';
 @import 'components/component-holder';
+@import 'components/country-item';
 @import 'components/footer';
 @import 'components/form-field/color';
 @import 'components/form-field/custom-checkbox';
 @import 'components/form-field/image';
 @import 'components/form-field/index';
+@import 'components/form-field/phone-box';
 @import 'components/form-field/pin';
 @import 'components/form-field/radio';
 @import 'components/form-field/select';
@@ -59,6 +65,9 @@
 @import 'components/view-formatter';
 
 //6. Pages
+@import 'pages/about/index';
+@import 'pages/cart/index';
+@import 'pages/checkout/index';
 @import 'pages/favorites/index';
 @import 'pages/landing/index';
 @import 'pages/product/index';

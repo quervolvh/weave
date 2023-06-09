@@ -120,6 +120,7 @@
     border: $inputBorder;
     padding: 11px 24px;
     width: 100%;
+    height: 48px;
     line-height: 1.8;
     font-family: unset;
     transition: color 0.2s, background 0.2s;
@@ -166,6 +167,16 @@
 
   &.labelled-checkbox {
     display: flex;
+
+    .form-field-title {
+
+      display: flex;
+      align-items: center;
+      margin: 0;
+      font-weight: 400;
+
+    }
+
   }
 
   &-optional {
@@ -210,13 +221,6 @@
   }
 
   &.with-button {
-    @extend %box-shadow;
-
-    @include media-query(mobile) {
-      flex-direction: column;
-      box-shadow: none;
-      padding: 0;
-    }
 
     display: flex;
     margin-top: 30px;
@@ -225,18 +229,11 @@
     background: white;
 
     input {
-      @include media-query(mobile) {
-        box-shadow: $header-shadow;
-      }
-      border: 0;
-      background: transparent;
-    }
 
-    button {
-      @include media-query(mobile) {
-        margin: 20px auto;
-      }
-      max-width: max-content;
+      border: 0;
+      height: 58px;
+      background: transparent;
+
     }
 
     & .form-field-error {

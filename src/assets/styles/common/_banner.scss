@@ -1,5 +1,12 @@
 .banner {
 
+    @include media-query(mobile) {
+
+        flex-direction: column;
+        max-height: unset;
+
+    }
+
     display: flex;
     height: 100vh;
     max-height: 790px;
@@ -8,6 +15,16 @@
     &-left {
 
         @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            margin-top: 0;
+            height: 100vh;
+            min-height: 700px;
+            max-height: 812px;
+
+        }
+
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -23,6 +40,8 @@
             margin-top: auto;
             margin-bottom: 30px;
             max-width: 605px;
+            font-family: $header-font;
+            font-weight: 400;
             color: color(white);
 
         }
@@ -37,6 +56,12 @@
     }
 
     &-right {
+
+        @include media-query(mobile) {
+
+            min-height: 200px;
+
+        }
 
         width: 30%;
         max-width: 404px;

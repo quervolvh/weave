@@ -41,6 +41,13 @@
 
   &-nav {
 
+    @include media-query(mobile) {
+
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+
+    }
+
     border-radius: 4px;
     padding: 4px 10px;
     list-style: none;

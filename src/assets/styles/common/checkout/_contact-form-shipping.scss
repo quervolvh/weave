@@ -1,0 +1,77 @@
+.contact-form-shipping {
+
+    &-summary {
+
+        border-radius: 16px;
+        border: 1px solid color(line);
+        padding: 0 24px;
+        width: 100%;
+
+        .view-formatter {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &-wrapper-box {
+
+                padding: 18px 0;
+
+            }
+
+            &-wrapper-box:not(:last-child) {
+
+                border-bottom-right-radius: 0;
+
+                border-bottom-left-radius: 0;
+
+                border-bottom: 1px solid color(line);
+
+            }
+
+            &-value-box {
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 70%;
+
+            }
+
+            &-value-box p {
+
+                margin-bottom: 0 !important;
+
+            }
+
+            &-extra-value {
+
+                @include font-size(small);
+                color: color(faux-blue);
+
+            }
+
+        }
+
+    }
+
+    &-payment-method {
+
+        margin: 64px 0;
+
+        .component-header h2 {
+
+            margin-bottom: 3px;
+
+        }
+
+        .view-formatter-wrapper-box {
+
+           margin-bottom: 20px;
+
+        }
+
+    }
+
+}

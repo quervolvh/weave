@@ -22,7 +22,7 @@ function App({ Component, pageProps }: AppProps) {
 
   const currentPath = router.pathname.trim();
 
-  const unProtectedRoutes: string[] = ["", "/", "/executive", "/passenger", "/mover", "/ev"];
+  const unProtectedRoutes: string[] = ["", "/",];
 
   const redirectCondition =
     (isInSession && [...unProtectedRoutes].includes(currentPath));

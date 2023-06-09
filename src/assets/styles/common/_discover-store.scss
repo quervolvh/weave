@@ -1,5 +1,13 @@
 .discover-store {
 
+    @include media-query(mobile) {
+
+        margin-right: 0;
+        min-width: 100%;
+        max-width: 100%;
+
+    }
+
     border-radius: 16px;
     border: 1px solid color(itemBorder);
     padding: 24px 16px;

@@ -11,6 +11,19 @@
     &-block {
 
         @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            overflow-x: unset;
+
+            .discover-store:not(:first-child) {
+
+                display: none;
+
+            }
+
+        }
+
         display: flex;
         margin-top: 0;
         padding-top: 0;

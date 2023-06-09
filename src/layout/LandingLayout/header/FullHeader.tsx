@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { rightLinks } from 'constants/index';
 import { classnames } from 'utils';
-import { Button } from 'components';
+import { Button, CartIcon, DarkHeart, Favorite, SearchIcon } from 'components';
+import { LinkWrapper } from 'components/LinkWrapper';
 
 
 export const FullHeader: React.FC = ({ }): JSX.Element => {
@@ -42,6 +43,7 @@ export const FullHeader: React.FC = ({ }): JSX.Element => {
     }, [document]);
 
     return (
+
         <div
             className={classnames('landingLayout-header', 'with-shades')}>
 
@@ -49,34 +51,58 @@ export const FullHeader: React.FC = ({ }): JSX.Element => {
 
                 <div className="landingLayout-header-left">
 
-                    <Link
-                        href={"*"}
-                    >
-                        <img src={"svg/logo_black.svg"} alt={"boldo"} />
-
-                    </Link>
+                <Button 
+                
+                    className='landingLayout-header-left-search transparent' 
+                    
+                    label='SEARCH' 
+                    
+                    svgIcon={SearchIcon} 
+                    
+                />
 
                 </div>
 
+                <Link
+                    href={"/"}
+                >
+                    <img src={"svg/logo_black.svg"} alt={"weav"} />
 
+                </Link>
 
                 <div className="landingLayout-header-right">
 
-                    {rightLinks.map((item, index) =>
+                    <LinkWrapper
 
-                        <Link
-                            key={`landingLayout-header-right-item-${index}`}
-                            className={item.class}
-                            href={item.link || ""}
-                        >
+                        link={"/favourites"}>
 
-                            {item.title}
+                        <span
 
-                        </Link>
+                            tabIndex={0}
 
-                    )}
+                            role='button'
 
-                    <Button label='Sign Up' />
+                            dangerouslySetInnerHTML={{ __html: DarkHeart }}
+
+                        />
+
+                    </LinkWrapper>
+
+                    <div
+
+                        tabIndex={0}
+
+                        role='button'
+
+                        className='landingLayout-header-right-cart'>
+
+                        <span dangerouslySetInnerHTML={{ __html: CartIcon }} />
+
+                    </div>
+
+                    <Button className='transparent landingLayout-header-right-log-in' label='LOG IN' />
+
+                    <Button className='landingLayout-header-right-sign-up' label='Sign Up' />
 
                 </div>
 

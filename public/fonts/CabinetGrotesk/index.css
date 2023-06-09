@@ -5,3 +5,11 @@
     font-style: normal;
     src: url('./CabinetGrotesk-Bold.otf');
 }
+
+@font-face {
+    text-rendering: optimizeLegibility;
+    font-family: 'cabinet-grotesk';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./CabinetGrotesk-Regular.ttf');
+}

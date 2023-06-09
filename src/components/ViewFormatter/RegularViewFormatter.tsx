@@ -51,7 +51,7 @@ export const RegularViewFormatter: React.FC<Props> = ({ ...props }) => {
 
             </div>
 
-            <span>
+            <span className='view-formatter-value-box'>
 
                 {Array.isArray(value) ?
 
@@ -69,7 +69,7 @@ export const RegularViewFormatter: React.FC<Props> = ({ ...props }) => {
 
                 }
 
-                {extraValue && <p> {extraValue || ""} </p>}
+                {extraValue && <p className='view-formatter-extra-value'> {extraValue || ""} </p>}
 
             </span>
 

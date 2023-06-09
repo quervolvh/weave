@@ -29,5 +29,5 @@ interface Props {
     className?: string,
     dangerousTitle?: string,
     control?: ReactElement<any, any>,
-    trail?: { title: string, link: string }[]
+    trail?: { title: string, link: string , onClick?: ()=> void}[]
 }

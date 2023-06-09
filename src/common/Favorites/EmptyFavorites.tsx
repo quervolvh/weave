@@ -3,7 +3,19 @@ import { ComponentHolder, ContinueArrow } from "components";
 import Link from "next/link";
 import { NewArrivals } from "common/NewArrivals";
 
-export const EmptyFavorites = ({ }) => {
+export const EmptyFavorites: React.FC<Props> = ({ isMobile }) => {
+
+    const ContinueShoppingLink = () => (
+
+        <Link href="/#" className="favorites-header-continue">
+
+            <p> Continue Shopping </p>
+
+            <span dangerouslySetInnerHTML={{ __html: ContinueArrow }} />
+
+        </Link>
+
+    );
 
     return (
 
@@ -11,19 +23,20 @@ export const EmptyFavorites = ({ }) => {
 
             title="YOUR FAVOURITES"
 
-            headerClass="favorites-header"
+            headerClass="favorites-header favorites-header-empty"
 
-            headerControl={<Link href="/#">
+            bodyClass="favorites-empty-body"
 
-                <div className="favorite-continue">
+            headerControl={
 
-                    <p> Continue Shopping </p>
+                isMobile ?
 
-                    <span dangerouslySetInnerHTML={{ __html: ContinueArrow }} />
+                    <p className="favorites-header-label-mobile"> Your favourites is empty </p>
 
-                </div>
+                    :
 
-            </Link>
+                    <ContinueShoppingLink />
+
             }
 
             trail={[
@@ -44,7 +57,13 @@ export const EmptyFavorites = ({ }) => {
 
             ]}
 
-            customHeader={() => <p className="favorites-header-label"> Your favourites is empty. </p>}
+            customHeader={() => isMobile ?
+
+                <ContinueShoppingLink /> :
+
+                <p className={("favorites-header-label")}> Your favourites is empty. </p>
+
+            }
 
         >
 
@@ -71,5 +90,11 @@ export const EmptyFavorites = ({ }) => {
         </ComponentHolder>
 
     )
+
+}
+
+interface Props {
+
+    isMobile: boolean
 
 }

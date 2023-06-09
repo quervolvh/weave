@@ -23,7 +23,7 @@ export const LandingLayoutTrail: React.FC<Props> = ({
 
                         link={item.link}>
 
-                        <p> {item.title} </p>
+                        <p onClick={()=> item?.onClick && item.onClick()}> {item.title} </p>
 
                     </LinkWrapper>
 
@@ -53,7 +53,9 @@ interface Props {
 
         title: string,
 
-        link: string
+        link: string,
+
+        onClick?: ()=> void
 
     }[]
 

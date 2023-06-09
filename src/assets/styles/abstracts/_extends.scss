@@ -29,12 +29,14 @@
     padding: 25px 62px;
   }
 
-  @include media-query(mobile) {
-    padding: 33px 62px;
+  @include media-query(tablet) {
+
+    padding: 33px 30px;
+
   }
 
   @include media-query('small-tablet') {
-    padding: 20px;
+    padding: 33px 20px;
   }
 
   @include media-query('mobile') {

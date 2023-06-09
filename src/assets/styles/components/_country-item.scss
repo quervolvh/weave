@@ -1,0 +1,16 @@
+.country-item {
+
+    border-right: 0;
+
+    .view-formatter  {
+        min-width: 60px;
+
+        p {
+            @include font-size-override(small);
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+    }
+    
+}

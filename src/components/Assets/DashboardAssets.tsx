@@ -35,6 +35,11 @@ export const ArrowDown = `<svg width="24" height="24" viewBox="0 0 24 24" fill="
 </svg>
 `;
 
+export const ArrowTop = `<svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.4401 6.2876L8.55006 1.3976C7.97256 0.820097 7.02756 0.820097 6.45006 1.3976L1.56006 6.2876" stroke="#030200" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
 export const ellipse = `<svg width="623" height="504" viewBox="0 0 623 504" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="646.5" cy="-142.5" r="646.5" fill="#F1F1F1"/>
 </svg>
@@ -42,6 +47,17 @@ export const ellipse = `<svg width="623" height="504" viewBox="0 0 623 504" fill
 
 export const Favorite = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5165 17.3416C10.2332 17.4416 9.7665 17.4416 9.48317 17.3416C7.0665 16.5166 1.6665 13.0749 1.6665 7.24159C1.6665 4.66659 3.7415 2.58325 6.29984 2.58325C7.8165 2.58325 9.15817 3.31659 9.99984 4.44992C10.8415 3.31659 12.1915 2.58325 13.6998 2.58325C16.2582 2.58325 18.3332 4.66659 18.3332 7.24159C18.3332 13.0749 12.9332 16.5166 10.5165 17.3416Z" stroke="#585755" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const DarkHeart = `<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5165 17.8418C10.2332 17.9418 9.7665 17.9418 9.48317 17.8418C7.0665 17.0168 1.6665 13.5752 1.6665 7.74183C1.6665 5.16683 3.7415 3.0835 6.29984 3.0835C7.8165 3.0835 9.15817 3.81683 9.99984 4.95016C10.8415 3.81683 12.1915 3.0835 13.6998 3.0835C16.2582 3.0835 18.3332 5.16683 18.3332 7.74183C18.3332 13.5752 12.9332 17.0168 10.5165 17.8418Z" stroke="#232322" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const SearchIcon = `<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.58317 17.9998C13.9554 17.9998 17.4998 14.4554 17.4998 10.0832C17.4998 5.71092 13.9554 2.1665 9.58317 2.1665C5.21092 2.1665 1.6665 5.71092 1.6665 10.0832C1.6665 14.4554 5.21092 17.9998 9.58317 17.9998Z" stroke="#232322" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3332 18.8332L16.6665 17.1665" stroke="#232322" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
 
@@ -141,5 +157,58 @@ export const InstagramContact = `<svg width="24" height="24" viewBox="0 0 24 24"
 export const TwitterContact = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="12" fill="#E8B87A"/>
 <path d="M16.5 7.50503C16.5 7.50503 15.491 8.10103 14.93 8.27003C14.6289 7.92378 14.2287 7.67837 13.7835 7.56699C13.3384 7.45561 12.8697 7.48363 12.441 7.64725C12.0123 7.81088 11.6442 8.10223 11.3865 8.48189C11.1288 8.86154 10.9938 9.3112 11 9.77003V10.27C10.1213 10.2928 9.25064 10.0979 8.4655 9.70275C7.68037 9.30757 7.00516 8.72435 6.5 8.00503C6.5 8.00503 4.5 12.505 9 14.505C7.97026 15.204 6.74358 15.5545 5.5 15.505C10 18.005 15.5 15.505 15.5 9.75503C15.5 9.61603 15.486 9.47703 15.46 9.34003C15.97 8.83703 16.5 7.50503 16.5 7.50503Z" stroke="#F4FBFB" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const EditIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.83958 2.40006L3.36624 8.1934C3.15958 8.4134 2.95958 8.84673 2.91958 9.14673L2.67291 11.3067C2.58624 12.0867 3.14624 12.6201 3.91958 12.4867L6.06624 12.1201C6.36624 12.0667 6.78624 11.8467 6.99291 11.6201L12.4662 5.82673C13.4129 4.82673 13.8396 3.68673 12.3662 2.2934C10.8996 0.913397 9.78624 1.40006 8.83958 2.40006Z" stroke="#2521D4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.92676 3.3667C8.21342 5.2067 9.70676 6.61337 11.5601 6.80003" stroke="#2521D4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 14.6667H14" stroke="#2521D4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const DeleteIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 3.98665C11.78 3.76665 9.54667 3.65332 7.32 3.65332C6 3.65332 4.68 3.71999 3.36 3.85332L2 3.98665" stroke="#E11818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.66699 3.31325L5.81366 2.43992C5.92033 1.80659 6.00033 1.33325 7.12699 1.33325H8.87366C10.0003 1.33325 10.087 1.83325 10.187 2.44659L10.3337 3.31325" stroke="#E11818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5669 6.09326L12.1336 12.8066C12.0603 13.8533 12.0003 14.6666 10.1403 14.6666H5.86026C4.00026 14.6666 3.94026 13.8533 3.86693 12.8066L3.43359 6.09326" stroke="#E11818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.88672 11H9.10672" stroke="#E11818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.33301 8.33325H9.66634" stroke="#E11818" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const ExclamationIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.99967 1.33317C11.6663 1.33317 14.6663 4.33317 14.6663 7.99984C14.6663 11.6665 11.6663 14.6665 7.99967 14.6665C4.33301 14.6665 1.33301 11.6665 1.33301 7.99984C1.33301 4.33317 4.33301 1.33317 7.99967 1.33317Z" stroke="#585755" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 10.6665V7.33317" stroke="#585755" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.99609 5.3335H8.00208" stroke="#232322" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const MinusIcon = `<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 8.5H12" stroke="#92918E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const PlusIcon = `<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 8.5H12" stroke="#232322" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 12.5V4.5" stroke="#232322" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const CircleCheckPlain = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="11.5" stroke="#888580"/>
+</svg>
+`;
+
+export const CircleCheckFilled = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="11.5" stroke="#008080"/>
+<circle cx="12" cy="12" r="8" fill="#008080"/>
+</svg>
+`;
+
+export const CartIcon = `<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.25 6.89143V6.0831C6.25 4.2081 7.75833 2.36643 9.63333 2.19143C11.8667 1.97476 13.75 3.7331 13.75 5.92476V7.07476" stroke="#232322" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.49986 18.8332H12.4999C15.8499 18.8332 16.4499 17.4915 16.6249 15.8582L17.2499 10.8582C17.4749 8.82484 16.8915 7.1665 13.3332 7.1665H6.66652C3.10819 7.1665 2.52486 8.82484 2.74986 10.8582L3.37486 15.8582C3.54986 17.4915 4.14986 18.8332 7.49986 18.8332Z" stroke="#232322" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.9131 10.5002H12.9206" stroke="#232322" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.07859 10.5002H7.08608" stroke="#232322" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;

@@ -80,7 +80,7 @@ interface Props {
     isSearchable?: boolean,
     bankCode?: string,
     setAccountDetails?(e: any): void,
-    withButton?: { label: string, onClick?(): void, className?: string, disabled: boolean },
+    withButton?: { label?: string, onClick?(): void, className?: string, disabled?: boolean, svgIcon?: string },
     withLabelButton?: { label: string, onClick?(): void, className?: string, disabled: boolean },
     errorClass?: string,
     prefix?: string,

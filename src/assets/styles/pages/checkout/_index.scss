@@ -1,0 +1,166 @@
+.checkout {
+
+    &-body {
+
+        @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            margin-top: 0;
+
+        }
+
+    }
+
+    &-information {
+
+        @include media-query(mobile) {
+
+            flex-direction: column-reverse;
+
+        }
+
+        display: flex;
+        justify-content: space-between;
+
+        .cart-store-item-summary {
+
+            @include media-query(mobile) {
+
+                margin-top: 24px;
+                border-radius: 0;
+                border-bottom: 1px solid color(line);
+                padding-top: 24px;
+                padding-bottom: 24px;
+
+            }
+
+            box-shadow: 0 0 0 0 color(white);
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+
+            &-header,
+            .button {
+
+                display: none;
+
+            }
+
+        }
+
+        .cart-store-item-body-left {
+
+            width: 100%;
+
+        }
+
+        .cart-item {
+
+            margin-bottom: 28px;
+
+        }
+
+        .cart-item-image {
+
+            width: 72px;
+            height: 105px;
+
+        }
+
+        .cart-store-item-summary-table-header {
+
+            display: none;
+
+        }
+
+        .cart-store-item-summary-discount-input .form-field {
+
+            margin-bottom: 20px;
+
+        }
+
+    }
+
+    &-cart {
+
+        @include media-query(mobile) {
+
+            width: 100%;
+            max-width: 100%;
+
+        }
+
+        width: 45%;
+        max-width: 580px;
+
+        &-mobile-cart-hidden {
+
+            @include media-query(mobile) {
+
+                margin-top: 0 !important;
+                border-top: 0;
+                padding-top: 0 !important;
+                max-height: 0;
+                overflow: hidden;
+
+            }
+
+        }
+
+        &-mobile-cart-visible {
+
+            @include media-query(mobile) {
+
+                max-height: 200000px;
+
+            }
+
+        }
+
+        .cart-store-item-header {
+
+            display: none;
+
+        }
+
+        &-mobile-summary {
+
+            @include media-query(mobile) {
+
+                display: flex;
+
+            }
+
+            display: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+
+            p,
+            h2 {
+
+                display: inline-block;
+
+            }
+
+            h2 {
+
+                font-weight: 600;
+
+            }
+
+            p {
+
+                margin-left: 5px;
+                font-weight: 300;
+                color: color(secondary-text);
+
+            }
+
+        }
+
+    }
+
+}

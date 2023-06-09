@@ -15,15 +15,15 @@ const Favorites: React.FC<Props> = ({ isMobile, deviceWidth }) => {
         <LandingLayout
             headTitle={"Weave"}
             isMobile={isMobile}
-            className={"favorite"}
+            className={"favorites"}
             deviceWidth={deviceWidth}
             showFooter={true}
             showHeader={true}
         >
 
-            {empty === "true" && <EmptyFavorites />}
+            {empty === "true" && <EmptyFavorites isMobile={isMobile} />}
 
-            {!empty && <BaseFavorites />}
+            {!empty && <BaseFavorites isMobile={isMobile} />}
 
         </LandingLayout >
 

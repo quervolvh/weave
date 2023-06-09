@@ -6,6 +6,12 @@
 
   h2 {
 
+    @include media-query(mobile) {
+
+      font-size: (l-large);
+
+    }
+
     @include font-size(xx-large);
     margin-bottom: 6px;
     font-weight: 700;

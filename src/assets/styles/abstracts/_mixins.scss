@@ -81,6 +81,12 @@
     }
   }
 
+  @if ($breakpoint == 'mobile-break') {
+    @media only screen and (max-width: 380px) {
+      @content;
+    }
+  }
+
   @if ($breakpoint == 'real-mobile') {
     @media only screen and (max-width: 450px) {
       @content;

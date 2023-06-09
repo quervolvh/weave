@@ -3,6 +3,14 @@
     &-header {
 
         @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -11,17 +19,63 @@
 
         .landingLayout-trail {
 
+            @media only screen and (min-width: 601px) {
+
+                width: 250px;
+
+            }
+
+            @include media-query(tablet) {
+
+                width: 33%;
+
+            }
+
+            @include media-query(mobile) {
+
+                margin-top: 0;
+                width: unset;
+
+            }
+
             margin-bottom: 0 !important;
             padding: 0;
 
         }
 
-        .favorite-continue {
+        &-continue {
+
+            @media only screen and (min-width: 601px) {
+
+                width: 250px;
+
+            }
+
+            @include media-query(tablet) {
+
+                width: 33%;
+
+            }
+
+            @include media-query(mobile) {
+
+                justify-content: flex-start;
+                margin-top: 27.5px;
+                padding-left: 20px;
+
+            }
 
             display: flex;
             align-items: center;
+            justify-content: flex-end;
 
             p {
+
+                @include media-query(mobile) {
+
+                    @include font-size-override(medium);
+
+                }
 
                 @include font-size(p-large);
                 margin-right: 10px;
@@ -39,6 +93,13 @@
 
         h2 {
 
+            @include media-query(non-pc) {
+
+                @include font-size-override(m-large);
+                margin: 16px 0 4px;
+
+            }
+
             @include font-size(xxx-large);
             margin-bottom: 0;
 
@@ -52,6 +113,14 @@
             padding-top: 0;
             padding-bottom: 0;
             text-align: center;
+            font-weight: 300;
+            color: color(subBlack);
+
+        }
+
+        &-label-mobile {
+
+            @include font-size(medium);
             color: color(subBlack);
 
         }
@@ -60,11 +129,24 @@
 
     &-empty-category-header {
 
+        @include media-query(mobile) {
+
+            margin-top: 37px !important;
+            padding-top: 0 !important;
+
+        }
+
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
         h2 {
+
+            @include media-query(non-pc) {
+
+                @include font-size-override(m-large);
+
+            }
 
             @include font-size(o-large);
 
@@ -72,8 +154,40 @@
 
         a {
 
+            @include media-query(mobile) {
+
+                display: none;
+
+            }
+
             @include font-size(regular);
             color: color(faux-blue);
+
+        }
+
+    }
+
+    &-empty-body {
+
+        .new-arrivals-block .product-item {
+
+            margin-bottom: 0;
+
+        }
+
+    }
+
+    .store-top {
+
+        @include media-query(mobile) {
+
+            margin-top: 0;
+
+            .component-filter-box {
+
+                margin-bottom: 10px;
+
+            }
 
         }
 
