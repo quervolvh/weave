@@ -13,18 +13,13 @@ export const EmptyCart = ({ }) => {
 
             headerClass="favorites-header"
 
-            headerControl={<Link href="/#">
+            headerControl={<Link href="/#" className="favorites-header-continue">
 
-                <div className="favorite-continue">
+                <p> Continue Shopping </p>
 
-                    <p> Continue Shopping </p>
+                <span dangerouslySetInnerHTML={{ __html: ContinueArrow }} />
 
-                    <span dangerouslySetInnerHTML={{ __html: ContinueArrow }} />
-
-                </div>
-
-            </Link>
-            }
+            </Link>}
 
             trail={[
 
