@@ -68,7 +68,7 @@ export const FullHeader: React.FC<{ toggleCart: () => void, showCart: boolean }>
         }
 
         // eslint-disable-next-line
-    }, [document]);
+    }, [typeof window !== "undefined"]);
 
     return (
 

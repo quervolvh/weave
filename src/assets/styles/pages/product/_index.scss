@@ -435,31 +435,6 @@
 
         @extend %body-width-and-padding;
 
-        @include media-query(mobile) {
-
-            margin-top: 0;
-
-            .review-item {
-
-                flex-direction: column;
-
-            }
-
-            .review-item-rating {
-
-                margin-bottom: 16px;
-
-            }
-
-            .review-item-help-stat {
-
-                margin-top: 16px;
-                width: max-content;
-
-            }
-
-        }
-
         &-header {
 
             display: flex;

@@ -58,11 +58,11 @@ export const MetaHead: React.FC<Props> = ({ title = "company" }) => {
 
       <link href={'/fonts/style.css'} rel="stylesheet" />
 
-      <script>
+      {/* <script>
         {process.env.NEXT_PUBLIC_NODE_ENV !== 'development'
           ? 'window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function(){}'
           : ''}
-      </script>
+      </script> */}
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: seoAttributes }} />
 

@@ -41,7 +41,7 @@ const Store: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
         >
 
-            {view === "with-store" && <StoreCollection />}
+            {view === "with-store" && <StoreCollection isMobile={isMobile} />}
 
             {!view && <StoreProducts />}
 

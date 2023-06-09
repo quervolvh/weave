@@ -7,7 +7,7 @@ import { StoreReview } from '../StoreReview';
 import { StoreDescription } from '../StoreDescption';
 import { StoreFAQ } from '../StoreFAQ';
 
-export const StoreCollection: React.FC<Props> = ({ }) => {
+export const StoreCollection: React.FC<Props> = ({ isMobile }) => {
 
     return (
 
@@ -18,6 +18,8 @@ export const StoreCollection: React.FC<Props> = ({ }) => {
         >
 
             <StoreBanner
+
+                isMobile={isMobile}
 
                 bottomInfo={{
 
@@ -50,4 +52,8 @@ export const StoreCollection: React.FC<Props> = ({ }) => {
     )
 }
 
-interface Props { }
+interface Props {
+
+    isMobile: boolean
+
+}

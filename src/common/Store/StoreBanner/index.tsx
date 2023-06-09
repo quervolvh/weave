@@ -5,7 +5,9 @@ import Link from "next/link";
 
 export const StoreBanner: React.FC<Props> = ({
 
-    bottomInfo
+    bottomInfo,
+
+    isMobile
 
 }) => {
 
@@ -15,7 +17,15 @@ export const StoreBanner: React.FC<Props> = ({
 
             <div className="store-banner-top">
 
-                <img src="assets/store/black-craft-store-banner.png" alt="store --- " />
+                <img src={isMobile ?
+
+                    "assets/store/store-banner-collection-mobile-image.png" :
+
+                    "assets/store/black-craft-store-banner.png"
+
+                }
+
+                    alt="store --- " />
 
             </div>
 
@@ -89,6 +99,7 @@ export const StoreBanner: React.FC<Props> = ({
 
 interface Props {
 
+    isMobile: boolean,
 
     bottomInfo: {
 

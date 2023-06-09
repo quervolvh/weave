@@ -4,7 +4,7 @@ import { CartItemQuantifier } from "./CartItemQuantifier";
 import { Button, DeleteIcon, EditIcon, Favorite } from "components";
 import { classnames, numberFormat } from "utils";
 
-export const CartItem: React.FC<Props> = ({ thumbnail, variants, title, amount, controls }) => {
+export const CartItem: React.FC<Props> = ({ thumbnail, variants, title, storeLabel, amount, controls }) => {
 
     const CartControls: React.FC<{ mobile?: boolean }> = ({ mobile }) => {
 
@@ -44,7 +44,7 @@ export const CartItem: React.FC<Props> = ({ thumbnail, variants, title, amount, 
 
                 </div>
 
-                {variants && <CartItemVariants variants={variants} productLabel={title} />}
+                {variants && <CartItemVariants variants={variants} productLabel={title} storeLabel={storeLabel} />}
 
                 {controls?.quantity !== false && <CartItemQuantifier />}
 
@@ -63,6 +63,8 @@ export const CartItem: React.FC<Props> = ({ thumbnail, variants, title, amount, 
 interface Props {
 
     thumbnail: string,
+
+    storeLabel: string,
 
     controls?: { quantity?: boolean, itemControls?: boolean },
 

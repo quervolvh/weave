@@ -5,6 +5,12 @@
 
     &-top {
 
+        @include media-query(mobile) {
+
+            height: 500px;
+
+        }
+
         height: 400px;
 
         img {
@@ -26,6 +32,15 @@
     &-bottom {
 
         @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            flex-direction: column;
+            margin-top: 25px;
+            padding-top: 0;
+
+        }
+
         display: flex;
         align-items: center;
         padding-top: 26px;
@@ -84,8 +99,15 @@
 
         &-right {
 
+            @include media-query(mobile) {
+
+                width: 100%;
+
+            }
+
             display: flex;
             justify-content: space-between;
+            margin-top: 20px;
             width: 40%;
 
             .view-formatter-wrapper-box {
@@ -93,7 +115,14 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding-top: 0;
+                padding-left: 0;
                 max-width: 260px;
+
+                &:not(:first-child) {
+
+                    padding-right: 0;
+
+                }
 
                 .view-formatter-title-box p {
 
@@ -114,6 +143,14 @@
         }
 
         &-link {
+
+            @include media-query(mobile) {
+
+                margin-right: auto;
+                margin-bottom: 20px;
+                margin-left: 0;
+
+            }
 
             display: flex;
             align-items: center;

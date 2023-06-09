@@ -1,5 +1,24 @@
 .review-item {
 
+    @include media-query(mobile) {
+
+        flex-direction: column;
+
+        .review-item-rating {
+
+            margin-bottom: 16px;
+
+        }
+
+        .review-item-help-stat {
+
+            margin-top: 16px;
+            width: max-content;
+
+        }
+
+    }
+
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
@@ -69,7 +88,9 @@
 
             margin-right: 12px;
             width: 120px;
+            min-width: 120px;
             height: 120px;
+            min-height: 120px;
 
         }
 

@@ -18,14 +18,11 @@ function App({ Component, pageProps }: AppProps) {
 
   const { isMobile, deviceWidth, showMobileView, clientMode } = state;
 
-  const isInSession = false;
-
   const currentPath = router.pathname.trim();
 
-  const unProtectedRoutes: string[] = ["", "/",];
+  const unProtectedRoutes: string[] = ["/cart", "/checkout", "/favourites", "/product", "/store", "/about", "/"];
 
-  const redirectCondition =
-    (isInSession && [...unProtectedRoutes].includes(currentPath));
+  const redirectCondition = !([...unProtectedRoutes].includes(currentPath));
 
   const resizeListener = (mode: "add" | "remove") => {
 
@@ -48,7 +45,7 @@ function App({ Component, pageProps }: AppProps) {
 
     // On first load, this function sets the values obtained for client width and height.
 
-    if (clientMode && window && document) {
+    if (clientMode && window) {
 
       resizeListener("add");
 
@@ -73,19 +70,13 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
 
-
-    if (isInSession && [...unProtectedRoutes, "/404", "/500"].includes(currentPath)) {
-      router.replace("/dashboard");
+    if (!([...unProtectedRoutes].includes(currentPath))) {
+      router.replace("/");
     }
 
     //eslint-disable-next-line
   }, [redirectCondition]);
 
-  useEffect(() => {
-
-    if (!isInSession) change(0, "timeOutTrigger", setState);
-
-  }, [isInSession]);
 
   SetClientAvailability((e) => change(e, "clientMode", setState));
 
@@ -93,12 +84,12 @@ function App({ Component, pageProps }: AppProps) {
     <>
 
       {
-        (redirectCondition || !clientMode) ?
+        (redirectCondition) ?
 
-          <> </>
+          <></>
+
 
           :
-
           <>
 
             <Component

@@ -2,6 +2,13 @@
 
     @extend %body-width-and-padding;
 
+    @include media-query(mobile) {
+
+        margin-top: 20px;
+        padding-top: 0;
+
+    }
+
     .component-header h2 {
 
         @include font-size(l-large);

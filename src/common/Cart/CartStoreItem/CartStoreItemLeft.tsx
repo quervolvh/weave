@@ -23,7 +23,21 @@ export const CartStoreItemLeft: React.FC<Props> = ({ thumbnail, items, label, sl
 
             <div className="cart-store-item-body-products">
 
-                {items.map((item, index) => <CartItem {...item} controls={controls} key={`cart-item-${label}-${index}`} />)}
+                {items.map((item, index) => 
+                
+                    <CartItem 
+                    
+                        {...item} 
+
+                        storeLabel={label}
+                        
+                        controls={controls} 
+                        
+                        key={`cart-item-${label}-${index}`} 
+                        
+                    />
+                    
+                )}
 
             </div>
 

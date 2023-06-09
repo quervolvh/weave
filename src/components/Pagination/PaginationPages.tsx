@@ -1,7 +1,7 @@
 import React from 'react';
 import { classnames } from 'utils';
 
-export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty, ...props }) => {
+export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, ...props }) => {
 
     const Pages = parseInt(String(pages)?.includes(".") ? String(pages + 1) : String(pages))
 
@@ -42,10 +42,9 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
     // this function takes a user to the selected page
     const clickHer = (page: number) => props.onClick(page);
 
-    if (empty) return (<></>);
-
     return (
-        <li className='pagination-pages'>
+        
+        <ul className='pagination-pages'>
 
             <li
                 onClick={() => page === 1 ? null : clickHer(page - 1)}
@@ -53,7 +52,9 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
                 className={classnames('pagination-nav')}
                 tabIndex={0}
             >
+                
                 <p className={classnames(page === 1 && "inactive")}> Prev </p>
+            
             </li>
 
             <ul>
@@ -85,9 +86,9 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
                         key={`post-${page}-${index}`}
                         onClick={() => clickHer(page)}
                         role={"button"}
-                        className={classnames("pagination-page-numbers" )}
+                        className={classnames("pagination-page-numbers")}
                         tabIndex={0}>
-                         {page < 10 && "0"}{page}
+                        {page < 10 && "0"}{page}
                     </li>
                 ))}
 
@@ -105,17 +106,17 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
 
             </ul>
 
-           
-                <li
-                    onClick={() => (Number(page) !== Number(pages)) ? clickHer(page + 1) : null}
-                    className='pagination-nav'
-                    role={"button"}
-                    tabIndex={0}>
-                    <p className={classnames( page === pages && "inactive")}> Next </p>
-                </li>
-            
 
-        </li>
+            <li
+                onClick={() => (Number(page) !== Number(pages)) ? clickHer(page + 1) : null}
+                className='pagination-nav'
+                role={"button"}
+                tabIndex={0}>
+                <p className={classnames(page === pages && "inactive")}> Next </p>
+            </li>
+
+
+        </ul>
 
     );
 };
@@ -129,7 +130,5 @@ interface Props {
     isMobile: boolean,
 
     onClick(e: number): void,
-
-    empty?: boolean
 
 }

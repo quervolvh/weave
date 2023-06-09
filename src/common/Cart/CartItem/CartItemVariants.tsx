@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CartItemVariants: React.FC<Props> = ({ variants, productLabel }) => {
+export const CartItemVariants: React.FC<Props> = ({ variants, productLabel , storeLabel }) => {
 
     return (
 
@@ -8,11 +8,14 @@ export const CartItemVariants: React.FC<Props> = ({ variants, productLabel }) =>
 
             {variants.map((item, index) =>
 
-                <>
+                <React.Fragment
+                
+                key={`cart-item-variants-${productLabel}-${item.type}-${index}-${storeLabel}`}
+
+                >
 
                     <div
 
-                        key={`cart-item-variants-${productLabel}-${item.type}`}
 
                         className="cart-item-variants-scope"
 
@@ -40,7 +43,7 @@ export const CartItemVariants: React.FC<Props> = ({ variants, productLabel }) =>
 
                     {index !== (variants.length - 1) && <div className="cart-item-variants-scope-separator" />}
 
-                </>
+                </React.Fragment>
 
             )}
 
@@ -54,6 +57,8 @@ export const CartItemVariants: React.FC<Props> = ({ variants, productLabel }) =>
 interface Props {
 
     productLabel: string,
+
+    storeLabel: string,
 
     variants: {
 

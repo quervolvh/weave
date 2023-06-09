@@ -4,13 +4,13 @@ import { StoreFilter } from 'components/StoreFilter';
 import { ProductItem } from 'common/Product/ProductItem';
 import { classnames } from 'utils';
 
-export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ title , className }) => {
+export const StoreTop: React.FC<{ title?: string, className?: string }> = ({ title, className }) => {
 
     return (
 
         <ComponentHolder
 
-            className={classnames('store-top' , className )}
+            className={classnames('store-top', className)}
             title={title}
 
             customHeader={StoreFilter}
@@ -313,7 +313,19 @@ export const StoreTop: React.FC<{ title?: string , className?: string }> = ({ ti
 
                 <p className='store-top-controls-label'> {"There's"} so much more for you to discover </p>
 
-                <Pagination page={1} pages={24} isMobile={true} dataCount={233} onClick={()=> null} />
+                <Pagination
+
+                    isMobile={false}
+
+                    onClick={() => null}
+
+                    page={1}
+
+                    pages={24}
+
+                    dataCount={233}
+
+                />
 
             </div>
 

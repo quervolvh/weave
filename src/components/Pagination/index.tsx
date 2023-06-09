@@ -3,44 +3,29 @@ import { PaginationPages } from './PaginationPages';
 
 export const Pagination: React.FC<Props> = (props) => {
 
-    const { pages, page, perPageSelector, empty, isMobile } = props;
+    const { pages, page, isMobile } = props;
 
     const clickHer = (e: { page: number }) => props.onClick(e);
 
     return (
+
         <div className='pagination'>
-            {
 
-                !empty &&
+            <div className="pagination-flex">
 
-                <div className="pagination-flex">
+                <PaginationPages
 
-                    {
-                        perPageSelector !== false &&
+                    isMobile={isMobile}
 
-                        <div className="pagination-opt">
+                    page={page || 1}
 
-                            <b> TOTAL PAGES {pages} </b>
+                    pages={pages || 1}
 
-                        </div>
+                    onClick={e => clickHer({ page: e })}
 
-                    }
+                />
 
-                    <PaginationPages
-
-                        isMobile={isMobile}
-
-                        page={page || 1}
-
-                        pages={pages || 1}
-
-                        onClick={e => clickHer({ page: e })}
-
-                    />
-
-                </div>
-
-            }
+            </div>
 
         </div>
 
@@ -54,6 +39,4 @@ interface Props {
     page: number,
     perPage?: number,
     onClick: (e: { page: number }) => void,
-    perPageSelector?: boolean,
-    empty?: boolean
 }
