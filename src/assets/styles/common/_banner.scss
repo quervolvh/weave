@@ -3,12 +3,14 @@
     @include media-query(mobile) {
 
         flex-direction: column;
+        min-height: 1000px;
         max-height: unset;
 
     }
 
     display: flex;
     height: 100vh;
+    min-height: 790px;
     max-height: 790px;
     background: color(black_);
 
@@ -59,6 +61,8 @@
 
         @include media-query(mobile) {
 
+            width: 100%;
+            max-width: unset;
             min-height: 200px;
 
         }

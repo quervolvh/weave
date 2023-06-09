@@ -17,6 +17,8 @@ export const Header: React.FC<Props> = ({ isMobile }): JSX.Element => {
                 <>
                     <FullHeader
 
+                        showCart={triggerCart}
+
                         toggleCart={() => setCartTrigger((prevState) => !prevState)}
 
                     />
@@ -25,7 +27,7 @@ export const Header: React.FC<Props> = ({ isMobile }): JSX.Element => {
                 </>
             }
 
-            <HeaderCart showCart={triggerCart} />
+            <HeaderCart showCart={triggerCart} onClickOutside={()=> setCartTrigger(false)} />
 
         </>
     )

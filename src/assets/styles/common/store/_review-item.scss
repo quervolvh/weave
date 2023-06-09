@@ -17,6 +17,13 @@
 
         p {
 
+            @include media-query(mobile) {
+
+                @include font-size-override(small);
+                font-weight: 200;
+
+            }
+
             @include font-size(x-small);
 
         }
@@ -33,6 +40,12 @@
         }
 
         &-sub {
+
+            @include media-query(mobile) {
+
+                @include font-size-override(regular);
+
+            }
 
             @include font-size(small);
 
@@ -84,6 +97,12 @@
         }
 
         &-details-info {
+
+            @include media-query(mobile) {
+
+                @include font-size-override(small);
+
+            }
 
             @include font-size(x-small);
             display: flex;

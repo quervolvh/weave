@@ -61,6 +61,16 @@ export const SearchIcon = `<svg width="20" height="21" viewBox="0 0 20 21" fill=
 </svg>
 `;
 
+export const NavMenuIcon = `<svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 2.50008V0.166748H21.5V2.50008H0.5ZM0.5 7.16675H21.5V4.83341H0.5V7.16675ZM0.5 11.8334H21.5V9.50008H0.5V11.8334Z" fill="#18191F"/>
+</svg>
+`;
+
+export const XCancelIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18.48L17.73 6.75" stroke="#232322" stroke-width="1.55433" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.73 18.48L6 6.75" stroke="#232322" stroke-width="1.55433" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
 export const LeftArrow = `<svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.50112 19.24L1.89445 11.6333C0.99612 10.735 0.99612 9.26501 1.89445 8.36668L9.50112 0.76001" stroke="#585755" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

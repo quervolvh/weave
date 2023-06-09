@@ -4,15 +4,34 @@
 
         @extend %body-width-and-padding;
 
+        @include media-query(mobile) {
+
+            margin-top: 0;
+            padding-top: 0;
+
+        }
+
     }
 
     &-top {
+
+        @include media-query(mobile) {
+
+            flex-direction: column;
+
+        }
 
         display: flex;
         flex-grow: 1;
 
         &-images,
         &-right {
+
+            @include media-query(mobile) {
+
+                max-height: unset;
+
+            }
 
             flex-grow: 1;
             max-height: 640px;
@@ -30,10 +49,24 @@
 
     &-top-images {
 
+        @include media-query(mobile) {
+
+            margin-right: 0;
+            margin-bottom: 16px;
+
+        }
+
         display: flex;
         margin-right: 50px;
 
         &-thumbnail {
+
+            @include media-query(mobile) {
+
+                display: none;
+                margin-right: 0;
+
+            }
 
             margin-right: 56px;
 
@@ -128,8 +161,14 @@
 
             &-info {
 
+                @include media-query(mobile) {
+
+
+                }
+
                 display: flex;
                 align-items: center;
+                margin-right: 17px;
                 height: max-content;
 
                 p {
@@ -162,6 +201,11 @@
 
         &-right {
 
+            @include media-query(mobile) {
+
+                width: 100%;
+
+            }
 
             display: flex;
             flex-wrap: wrap;
@@ -324,6 +368,24 @@
 
     &-ratings {
 
+        @include media-query(mobile) {
+
+            flex-direction: column;
+
+            .rating-bar-cursor {
+
+                flex-grow: 1;
+
+            }
+
+            .rating-bar-cursor-block {
+
+                width: 100%;
+
+            }
+
+        }
+
         display: flex;
         justify-content: space-between;
 
@@ -352,10 +414,16 @@
 
             small {
 
+                @include media-query(mobile) {
+
+                    margin-bottom: 28px;
+
+                }
+
                 @include font-size(regular);
                 display: block;
                 margin-top: 8px;
-                color: color(tertiary-text);
+                color: color(secondary-text);
 
             }
 
@@ -366,6 +434,31 @@
     &-review-segment {
 
         @extend %body-width-and-padding;
+
+        @include media-query(mobile) {
+
+            margin-top: 0;
+
+            .review-item {
+
+                flex-direction: column;
+
+            }
+
+            .review-item-rating {
+
+                margin-bottom: 16px;
+
+            }
+
+            .review-item-help-stat {
+
+                margin-top: 16px;
+                width: max-content;
+
+            }
+
+        }
 
         &-header {
 

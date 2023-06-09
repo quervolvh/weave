@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useOnClickOutside } from 'hooks';
 import { CartStoreItemLeft } from './CartStoreItem/CartStoreItemLeft';
 import { classnames, numberFormat } from 'utils';
 import { Button } from 'components';
 
-export const HeaderCart: React.FC<Props> = ({ showCart }) => {
+export const HeaderCart: React.FC<Props> = ({ showCart , onClickOutside }) => {
+    
+    const ref: React.MutableRefObject<any> = useRef();
+
+    useOnClickOutside(ref, ()=> showCart ? onClickOutside() : undefined );
 
     return (
 
-        <div className='header-cart-anchor'>
+        <div className='header-cart-anchor' ref={ref}>
 
             <div className={classnames('header-cart', !showCart && "header-cart-hidden")}>
 
@@ -147,6 +152,8 @@ export const HeaderCart: React.FC<Props> = ({ showCart }) => {
 
 interface Props {
 
-    showCart?: boolean
+    showCart?: boolean,
+
+    onClickOutside(): void
 
 }

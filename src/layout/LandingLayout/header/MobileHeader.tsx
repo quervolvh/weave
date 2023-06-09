@@ -16,7 +16,7 @@ export const MobileHeader = ({ }): JSX.Element => {
 
             <div className={`landingLayout-header-mobile-exp ${isExpanded ? "expanded" : ""}`}>
 
-                <MobileHeaderToggler setExpansion={setIsExpanded} isExpanded={isExpanded} />
+                <MobileHeaderToggler hideLinks={true} setExpansion={setIsExpanded} isExpanded={isExpanded} />
 
                 <div className="landingLayout-header-mobile-bottom">
 

@@ -5,7 +5,7 @@ import { Button, CartIcon, DarkHeart, SearchIcon } from 'components';
 import { LinkWrapper } from 'components/LinkWrapper';
 
 
-export const FullHeader: React.FC<{ toggleCart: () => void }> = ({ toggleCart }) => {
+export const FullHeader: React.FC<{ toggleCart: () => void, showCart: boolean }> = ({ toggleCart, showCart }) => {
 
     const scrollListener = () => {
 
@@ -22,6 +22,35 @@ export const FullHeader: React.FC<{ toggleCart: () => void }> = ({ toggleCart })
         }
 
     };
+
+    const CartButton:React.FC<{ onClick: ()=> void | null }> = ({ onClick }) => {
+
+        return (
+
+            <div
+
+                tabIndex={0}
+
+                role='button'
+
+                className='landingLayout-header-right-cart'
+
+                onClick={() => onClick()}
+
+            >
+
+                <span
+
+                    dangerouslySetInnerHTML={{ __html: CartIcon }}
+
+                />
+
+            </div>
+
+
+        );
+
+    }
 
     useEffect(() => {
 
@@ -87,21 +116,9 @@ export const FullHeader: React.FC<{ toggleCart: () => void }> = ({ toggleCart })
 
                     </LinkWrapper>
 
-                    <div
+                    {showCart && <CartButton onClick={()=> null} />}
 
-                        tabIndex={0}
-
-                        role='button'
-
-                        className='landingLayout-header-right-cart'>
-
-                        <span dangerouslySetInnerHTML={{ __html: CartIcon }}
-
-                            onClick={() => toggleCart()}
-
-                        />
-
-                    </div>
+                    {!showCart && <CartButton onClick={()=> toggleCart()} />}
 
                     <Button className='transparent landingLayout-header-right-log-in' label='LOG IN' />
 

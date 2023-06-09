@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export const MetaHead: React.FC<Props> = ({ title = "company" }) => {
 
-  const titleString = `${title || "boldo"}`;
+  const titleString = `${title || "weav"}`;
 
   const description = `company description company description company description company description company description company description`;
 
