@@ -46,13 +46,13 @@ export const CartItem: React.FC<Props> = ({ thumbnail, variants, title, amount, 
 
                 {variants && <CartItemVariants variants={variants} productLabel={title} />}
 
-                {controls !== false && <CartItemQuantifier />}
+                {controls?.quantity !== false && <CartItemQuantifier />}
 
-                {controls !== false && <CartControls />}
+                {controls?.itemControls !== false && <CartControls />}
 
             </div>
 
-            {controls !== false && <CartControls mobile={true} />}
+            {controls?.itemControls !== false && <CartControls mobile={true} />}
 
         </div>
 
@@ -64,7 +64,7 @@ interface Props {
 
     thumbnail: string,
 
-    controls?: boolean,
+    controls?: { quantity?: boolean, itemControls?: boolean },
 
     variants: {
 

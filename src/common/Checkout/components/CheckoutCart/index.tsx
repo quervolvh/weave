@@ -58,7 +58,7 @@ export const CheckOutCart = ({ }) => {
 
                     label: "VynePrint",
 
-                    controls: false,
+                    controls: { itemControls: false , quantity: false },
 
                     items: [
 
@@ -146,7 +146,7 @@ export const CheckOutCart = ({ }) => {
 
                     label: "LinenLT",
 
-                    controls: false,
+                    controls: { itemControls: false , quantity: false },
 
                     items: [
 

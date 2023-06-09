@@ -39,9 +39,9 @@ interface Props {
 
     thumbnail: string,
 
-    className: string,
+    className?: string,
 
-    controls?: boolean,
+    controls?: { quantity?: boolean, itemControls?: boolean },
 
     label: string,
 

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { rightLinks } from 'constants/index';
 import { classnames } from 'utils';
-import { Button, CartIcon, DarkHeart, Favorite, SearchIcon } from 'components';
+import { Button, CartIcon, DarkHeart, SearchIcon } from 'components';
 import { LinkWrapper } from 'components/LinkWrapper';
 
 
-export const FullHeader: React.FC = ({ }): JSX.Element => {
+export const FullHeader: React.FC<{ toggleCart: () => void }> = ({ toggleCart }) => {
 
     const scrollListener = () => {
 
@@ -51,15 +50,15 @@ export const FullHeader: React.FC = ({ }): JSX.Element => {
 
                 <div className="landingLayout-header-left">
 
-                <Button 
-                
-                    className='landingLayout-header-left-search transparent' 
-                    
-                    label='SEARCH' 
-                    
-                    svgIcon={SearchIcon} 
-                    
-                />
+                    <Button
+
+                        className='landingLayout-header-left-search transparent'
+
+                        label='SEARCH'
+
+                        svgIcon={SearchIcon}
+
+                    />
 
                 </div>
 
@@ -96,7 +95,11 @@ export const FullHeader: React.FC = ({ }): JSX.Element => {
 
                         className='landingLayout-header-right-cart'>
 
-                        <span dangerouslySetInnerHTML={{ __html: CartIcon }} />
+                        <span dangerouslySetInnerHTML={{ __html: CartIcon }}
+
+                            onClick={() => toggleCart()}
+
+                        />
 
                     </div>
 
